@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS:GO Skins Market Analysis - With Flexbox</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Full viewport height */
+        }
+        
+        .nav {
+            display: flex; /* Using flexbox for the navigation */
+            background-color: #333;
+            padding: 15px;
+            justify-content: flex-start; /* Aligns items at the start */
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-right: 10px;
+        }
+        
+        .nav a:hover {
+            background-color: #555;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            flex: 1; /* Fill available space */
+        }
+        
+        .main {
+            flex: 3; /* Takes 3 parts of available space */
+            padding: 20px;
+        }
+        
+        .sidebar {
+            flex: 1; /* Takes 1 part of available space */
+            padding: 20px;
+            background-color: #f0f0f0; /* Background color for sidebar */
+        }
+        
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+    </div>
+    
+    <div class="content-wrapper">
+        <div class="main">
+            <h1>CS:GO Skins Market Analysis</h1>
+            <p>Welcome to our CS:GO skins marketplace information center. Here you'll find comprehensive information about the virtual weapon skin economy.</p>
+            
+            <h2>Understanding Skin Values</h2>
+            <p>CS:GO skins vary in value based on factors such as rarity, wear condition, pattern, and popularity among players. Our analysis helps you make informed decisions about trading and collecting.</p>
+        </div>
+        
+        <div class="sidebar">
+            <h3>Featured Skins</h3>
+            <p>Check out some of our featured CS:GO weapon skins that are currently trending in the marketplace.</p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2025 CS:GO Skins Market Analysis. All rights reserved.</p>
+        <p>Created by Spencer Ernst</p>
+    </div>
+</body>
+</html>
