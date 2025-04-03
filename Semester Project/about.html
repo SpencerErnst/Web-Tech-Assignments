@@ -19,6 +19,8 @@
             <li><a href="rifle.html">Rifle Collection</a></li>
             <li><a href="pistol.html">Pistol Marketplace</a></li>
             <li><a href="smg.html">SMG Inventory</a></li>
+            <li><a href="investment-strategies.html">Investment</a></li>
+            <li><a href="pattern-guide.html">Pattern Guide</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -37,12 +39,17 @@
                     <h3>Spencer Ernst</h3>
                     <p>Junior at Babson College</p>
                     <p>Web Technologies Class, Professor Eric Palson</p>
+                    <p>Moving to NYC this summer to work for Morgan Stanley</p>
                 </div>
                 
-                <h2>Project Background</h2>
-                <p>This CS:GO Skins Market Analysis website was created as part of my Web Technologies course at Babson College. As someone interested in both web development and gaming economics, I chose to focus on the fascinating virtual economy of CS:GO skins.</p>
+                <div class="market-data">
+                    <h3>Project Background</h3>
+                    <p>This CS:GO Skins Market Analysis website was created as part of my Web Technologies course at Babson College. As someone interested in both web development and gaming economics, I chose to focus on the fascinating virtual economy of CS:GO skins.</p>
+                    
+                    <p>The Counter-Strike skin market represents a unique intersection of gaming culture, digital art, and virtual economics. Through this project, I'm exploring how to present market data and analysis in an accessible, user-friendly format while practicing essential web development skills.</p>
+                </div>
                 
-                <p>The Counter-Strike skin market represents a unique intersection of gaming culture, digital art, and virtual economics. Through this project, I'm exploring how to present market data and analysis in an accessible, user-friendly format while practicing essential web development skills.</p>
+                <img src="images/tradingPlatform.png" alt="CS:GO skin trading platform interface" class="cs-image">
                 
                 <h2>My Approach to CS:GO Skins</h2>
                 <ol>
@@ -68,6 +75,51 @@
                         </ul>
                     </li>
                 </ol>
+                
+                <div class="pattern-guide">
+                    <h3>My Trading Philosophy</h3>
+                    <p>I approach the CS:GO skin market with an analytical mindset, examining market trends, player preferences, and game updates to identify potential investment opportunities. I believe that success in this market requires both understanding the underlying economics and appreciating the aesthetic and cultural value of these digital assets.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-value">2013</div>
+                            <div class="stat-label">CS:GO Skin Market Launch</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">$1B+</div>
+                            <div class="stat-label">Annual Market Volume</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">20M+</div>
+                            <div class="stat-label">Active Traders</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="market-analysis">
+                    <h3>Project Development Journey</h3>
+                    <p>This website project is being completed in three phases:</p>
+                    
+                    <ul>
+                        <li><strong>Version 1 (TPV1):</strong> Basic HTML structure and content</li>
+                        <li><strong>Version 2 (TPV2):</strong> Enhanced styling with CSS and visual design</li>
+                        <li><strong>Final Version (TPF):</strong> JavaScript functionality and mobile optimization</li>
+                    </ul>
+                    
+                    <p>Each phase builds on the previous one, allowing me to focus on specific aspects of web development while creating a comprehensive resource for CS:GO skin enthusiasts.</p>
+                </div>
+                
+                <h3>My Web Development Skills</h3>
+                <p>Through this project, I've developed proficiency in:</p>
+                <ul>
+                    <li>HTML5 semantic structure</li>
+                    <li>CSS styling and layouts</li>
+                    <li>Responsive design principles</li>
+                    <li>Data visualization methods</li>
+                    <li>Image optimization techniques</li>
+                </ul>
+                
+                <p>The final version will incorporate JavaScript functionalities, jQuery components, and mobile-specific optimizations to create a fully interactive experience.</p>
             </div>
         </section>
     </main>
@@ -81,5 +133,54 @@
             <a href="sitemap.html">Site Map</a>
         </div>
     </footer>
+    <!-- Back to Top Button (JavaScript Feature) -->
+<button id="backToTopBtn" title="Go to top">↑</button>
+
+<style>
+/* Inline CSS for the button appearance */
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #ffcc00;
+  color: #333;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+}
+
+#backToTopBtn:hover {
+  background-color: #e6b800;
+}
+</style>
+
+<script>
+// JavaScript function to handle the Back to Top button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  // Display button when user scrolls down 300px from top
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    document.getElementById("backToTopBtn").style.display = "block";
+  } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top
+document.getElementById("backToTopBtn").onclick = function() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+};
+</script>
 </body>
 </html>

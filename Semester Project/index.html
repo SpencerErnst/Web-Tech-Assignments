@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- These pages were created with assistance from W3 Schools, Co-Pilot, and Claude AI -->
+    <!-- Information about CS:GO skins market is based on public knowledge and market analysis -->
+    <!-- This is Version 2 of the Term Project for Web Technologies class -->
 </head>
 <body>
     <header>
@@ -21,7 +23,9 @@
             <li><a href="rifle.html">Rifle Collection</a></li>
             <li><a href="pistol.html">Pistol Marketplace</a></li>
             <li><a href="smg.html">SMG Inventory</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="investment-strategies.html">Investment</a></li>
+            <li><a href="pattern-guide.html">Pattern Guide</a></li>
+            <li><a href="about.html">About Me</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -31,11 +35,22 @@
             <h2>Understanding CS:GO Skin Market</h2>
             <p class="update-info">Expert analysis updated daily</p>
             
+            <!-- Showcase of CS:GO skin quality types -->
+            <div class="pattern-guide">
+                <h3>CS:GO Skin Quality Classification</h3>
+                <img src="images/csgoSkinsAndPatterns.png" alt="CS:GO Skin Quality Types showing different rarity levels from common to covert" class="rarity-chart cs-image">
+                <p>CS:GO skins are classified by rarity tiers that determine their frequency in case openings. From common Consumer Grade (white) items to extremely rare Covert (red) items, each tier represents a significant drop in probability.</p>
+            </div>
+
             <div class="content-container">
                 <div class="text-content">
-                    <p>The CS:GO skin market represents a unique digital economy where virtual weapon skins can command significant real-world value. These cosmetic items vary in rarity, wear condition, and pattern, which directly influences their market price.</p>
+                    <p>The CS:GO skin market represents a sophisticated digital economy where virtual weapon skins can command significant real-world value. These cosmetic items vary in rarity, wear condition, pattern, and special attributes which directly influence their market price.</p>
                     
-                    <p>Market trends show that rare knife skins and popular rifle skins, particularly for the AK-47 and M4A4, tend to maintain their value well over time. Factors such as professional player usage, tournament events, and game updates can significantly impact skin prices.</p>
+                    <div class="market-data">
+                        <h3>Case Opening Probabilities</h3>
+                        <img src="images/caseOpeningOdds.png" alt="CS:GO case opening probabilities showing the percentage chance of unboxing different rarity tiers" class="cs-image">
+                        <p>Understanding the probability distribution is critical for proper investment analysis. As shown above, Mil-Spec (blue) items are most common at nearly 80%, while Covert (red) items appear in just 0.64% of openings. StatTrak™ variants are approximately 10x rarer than their standard counterparts.</p>
+                    </div>
                     
                     <h3>Factors Affecting Skin Prices:</h3>
                     <ul>
@@ -47,22 +62,24 @@
                                 <li>Restricted (Purple)</li>
                                 <li>Classified (Pink)</li>
                                 <li>Covert (Red)</li>
+                                <li>Contraband (Yellow - M4A4 Howl only)</li>
                             </ul>
                         </li>
-                        <li>Wear Conditions
+                        <li>Wear Conditions - Float Values
                             <ul>
-                                <li>Factory New</li>
-                                <li>Minimal Wear</li>
-                                <li>Field-Tested</li>
-                                <li>Well-Worn</li>
-                                <li>Battle-Scarred</li>
+                                <li>Factory New (0.00-0.07)</li>
+                                <li>Minimal Wear (0.07-0.15)</li>
+                                <li>Field-Tested (0.15-0.38)</li>
+                                <li>Well-Worn (0.38-0.45)</li>
+                                <li>Battle-Scarred (0.45-1.00)</li>
                             </ul>
                         </li>
                         <li>Special Attributes
                             <ul>
-                                <li>StatTrak™ Technology</li>
-                                <li>Souvenir Status</li>
-                                <li>Special Patterns</li>
+                                <li>StatTrak™ Technology - Tracks kills</li>
+                                <li>Souvenir Status - From major tournaments</li>
+                                <li>Special Patterns - Blue gems, fade percentages, etc.</li>
+                                <li>Stickers - Can add significant value</li>
                             </ul>
                         </li>
                     </ul>
@@ -73,9 +90,29 @@
                     <div class="cta-button">
                         <a href="#" class="start-trading">Start Trading</a>
                     </div>
+                    
+                    <div class="market-analysis">
+                        <h3>Market Trends</h3>
+                        <p>Recent data shows significant price fluctuations tied to major tournaments and game updates. Investment opportunities arise from understanding these market cycles.</p>
+                        <img src="images/totalMarketCapGraph.png" alt="CS:GO skins market price history chart showing value trends over time" class="price-chart">
+                    </div>
                 </div>
             </div>
             
+            <!-- Float Value Visualization -->
+            <div class="pattern-guide">
+                <h3>Weapon Wear System: Float Values</h3>
+                <img src="images/skinFloatComparisonAK47.png" alt="Comparison of the same AK-47 skin with different float values showing visual differences" class="float-scale cs-image">
+                <p>Every skin in CS:GO has a "float value" - a number between 0 and 1 that determines how worn or damaged the skin appears. Lower values indicate better condition, with visual damage increasing as the float value rises.</p>
+            </div>
+            
+            <!-- Trading Mechanisms -->
+            <div class="market-data">
+                <h3>Trade Up Contracts</h3>
+                <img src="images/pistolTradeUp.jpg" alt="CS:GO Trade Up Contract showing how to combine 10 lower-tier skins to get a higher-tier skin" class="cs-image">
+                <p>Trade Up Contracts let players exchange 10 skins of identical quality for one random skin of the next highest quality tier. Understanding collection combinations and probabilities is essential for profitable trade-ups.</p>
+            </div>
+
             <!-- Video section -->
             <div class="video-section">
                 <h3>CS:GO Skin Investment Guide</h3>
@@ -85,17 +122,79 @@
                 </video>
                 <!-- The market guide video can be found in the main folder named market-guide.mp4 -->
             </div>
+            
+            <div class="market-data">
+                <h3>Case Opening Simulator</h3>
+                <img src="images/knifeCaseOpening.jpg" alt="CS:GO case opening interface showing possible rewards when opening cases" class="cs-image">
+                <p>Cases are the primary source of most skins. Understanding case mechanics and the probabilities involved is crucial for investors who prefer buying skins directly rather than gambling through case openings.</p>
+            </div>
+            
+            <!-- Special Stories Section -->
+            <div class="pattern-guide">
+                <h3>The Contraband Story: M4A4 Howl</h3>
+                <img src="images/howlStory.jpg" alt="M4A4 Howl Contraband skin with story about copyright issues" class="cs-image">
+                <p>The M4A4 Howl is the only Contraband-tier skin in the game. Originally released as a Covert skin, it was discovered that the artwork was plagiarized. Valve removed it from cases and redesigned it, creating an exclusive collectible that continues to appreciate in value.</p>
+            </div>
         </section>
     </main>
     
     <footer>
         <p>© 2025 CS:GO Skins Market Analysis. All rights reserved.</p>
         <div class="footer-links">
-            <a href="about.html">About Us</a> | 
+            <a href="about.html">About Me</a> | 
             <a href="contact.html">Contact</a> | 
             <a href="credits.html">Credits</a> | 
             <a href="sitemap.html">Site Map</a>
         </div>
     </footer>
+    <!-- Back to Top Button (JavaScript Feature) -->
+<button id="backToTopBtn" title="Go to top">↑</button>
+
+<style>
+/* Inline CSS for the button appearance */
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #ffcc00;
+  color: #333;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+}
+
+#backToTopBtn:hover {
+  background-color: #e6b800;
+}
+</style>
+
+<script>
+// JavaScript function to handle the Back to Top button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  // Display button when user scrolls down 300px from top
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    document.getElementById("backToTopBtn").style.display = "block";
+  } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top
+document.getElementById("backToTopBtn").onclick = function() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+};
+</script>
 </body>
 </html>

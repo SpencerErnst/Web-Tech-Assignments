@@ -19,6 +19,8 @@
             <li><a href="rifle.html">Rifle Collection</a></li>
             <li><a href="pistol.html">Pistol Marketplace</a></li>
             <li><a href="smg.html">SMG Inventory</a></li>
+            <li><a href="investment-strategies.html">Investment</a></li>
+            <li><a href="pattern-guide.html">Pattern Guide</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -30,6 +32,20 @@
             <p>Pistol skins offer excellent value in the CS:GO market. As starting weapons used in pistol rounds and eco buys, they receive significant in-game visibility despite their lower average price compared to rifles and knives.</p>
             
             <img src="images/pistol-collection.jpg" alt="Collection of popular CS:GO pistol skins including Desert Eagle, USP-S, and Glock-18 designs" class="featured-image">
+            
+            <!-- Desert Eagle Pattern Guide -->
+            <div class="pattern-guide">
+                <h3>Desert Eagle Pattern Guide</h3>
+                <img src="images/deagleGems.png" alt="Desert Eagle with different valuable patterns highlighted" class="cs-image">
+                <p>The Desert Eagle Case Hardened skin features a randomly generated pattern of blue, gold, and purple. "Blue gems" with high percentages of blue coloration can be worth 3-10x the market price. Similarly, the Blaze skin's pattern affects flame placement, with centered flames being most desirable.</p>
+            </div>
+            
+            <!-- Glock Fade Percentage Guide -->
+            <div class="pattern-guide">
+                <h3>Glock Fade Percentage Guide</h3>
+                <img src="images/GlockFadePercentages.jpg" alt="Comparison of different Glock Fade percentages showing color gradients" class="cs-image">
+                <p>The Glock-18 Fade varies in appearance based on its "fade percentage." Higher fade percentages display more pronounced purple at the front of the slide. Full fades (95-100%) command significant price premiums over lower percentage variants.</p>
+            </div>
             
             <div class="pistol-categories">
                 <div class="pistol-category">
@@ -97,7 +113,7 @@
                 <div class="pistol-category">
                     <h3>Glock-18 Skins</h3>
                     <img src="images/glock-skin.jpg" alt="Glock-18 Fade skin with colorful gradient" class="pistol-image">
-                    <p>As the Terrorist starting pistol, the Glock-18 appears in nearly every competitive match. Its skins are especially visible during pistol rounds, which attract high viewership. This glock also has a sticket one it, one of the most valuable in the game.</p>
+                    <p>As the Terrorist starting pistol, the Glock-18 appears in nearly every competitive match. Its skins are especially visible during pistol rounds, which attract high viewership. This glock also has a sticker on it, one of the most valuable in the game.</p>
                     
                     <h4>Notable Glock-18 Skins:</h4>
                     <ul>
@@ -126,6 +142,20 @@
                 </div>
             </div>
             
+            <!-- Trade Up Contract Section -->
+            <div class="pattern-guide">
+                <h3>Pistol Trade-Up Strategies</h3>
+                <img src="images/pistolTradeUp.jpg" alt="Trade up contract using pistol skins to obtain higher-tier skins" class="cs-image">
+                <p>Pistol skins are often used in lucrative trade-up contracts. For example, ten P2000 Ocean Foam (Classified) skins can be traded up for a Desert Eagle Golden Koi or an AWP Graphite. Strategic trade-ups focusing on collection distribution can yield significant profits.</p>
+            </div>
+            
+            <!-- Sticker Placement Value -->
+            <div class="pattern-guide">
+                <h3>Sticker Placement on Pistols</h3>
+                <img src="images/stickerPlacements.png" alt="Gun showing optimal sticker placement positions" class="cs-image">
+                <p>Sticker placement significantly impacts added value. On most pistols, the position above the handle (closest to the player's view in-game) is considered the most valuable. Rare tournament stickers from early majors can increase a pistol's value by 10-50% of the sticker's price.</p>
+            </div>
+            
             <h3>Other Notable Pistols</h3>
             <ul>
                 <li>Five-SeveN
@@ -150,6 +180,41 @@
                     </ul>
                 </li>
             </ul>
+            
+            <div class="market-data">
+                <h3>Rare Pattern Pricing Guide</h3>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Pistol</th>
+                            <th>Pattern Type</th>
+                            <th>Market Price Multiplier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Desert Eagle Case Hardened</td>
+                            <td>Blue Gem (90%+ blue)</td>
+                            <td>5-10x</td>
+                        </tr>
+                        <tr>
+                            <td>Five-SeveN Case Hardened</td>
+                            <td>Blue Gem (90%+ blue)</td>
+                            <td>3-8x</td>
+                        </tr>
+                        <tr>
+                            <td>Glock-18 Fade</td>
+                            <td>Full Fade (95-100%)</td>
+                            <td>1.5-2x</td>
+                        </tr>
+                        <tr>
+                            <td>USP-S Blueprint</td>
+                            <td>Clean Blue Pattern</td>
+                            <td>1.2-1.5x</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             
             <h3>Investment Considerations</h3>
             <p>When adding pistol skins to your investment portfolio, consider these factors:</p>
@@ -188,5 +253,54 @@
             <a href="sitemap.html">Site Map</a>
         </div>
     </footer>
+    <!-- Back to Top Button (JavaScript Feature) -->
+<button id="backToTopBtn" title="Go to top">↑</button>
+
+<style>
+/* Inline CSS for the button appearance */
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #ffcc00;
+  color: #333;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+}
+
+#backToTopBtn:hover {
+  background-color: #e6b800;
+}
+</style>
+
+<script>
+// JavaScript function to handle the Back to Top button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  // Display button when user scrolls down 300px from top
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    document.getElementById("backToTopBtn").style.display = "block";
+  } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top
+document.getElementById("backToTopBtn").onclick = function() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+};
+</script>
 </body>
 </html>

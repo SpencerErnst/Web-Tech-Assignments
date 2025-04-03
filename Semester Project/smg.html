@@ -19,6 +19,8 @@
             <li><a href="rifle.html">Rifle Collection</a></li>
             <li><a href="pistol.html">Pistol Marketplace</a></li>
             <li><a href="smg.html">SMG Inventory</a></li>
+            <li><a href="investment-strategies.html">Investment</a></li>
+            <li><a href="pattern-guide.html">Pattern Guide</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -30,6 +32,13 @@
             <p>Submachine guns (SMGs) occupy a unique position in the CS:GO skin economy. While they typically see less play than rifles or pistols, they're frequently used in anti-eco rounds, offering specific investment opportunities for budget-conscious collectors.</p>
 
             <img src="images/smg-collection.jpg" alt="Collection of popular CS:GO SMG skins including P90, MP7, and UMP-45 designs" class="featured-image">
+            
+            <!-- Rarity Chart for SMGs -->
+            <div class="pattern-guide">
+                <h3>SMG Skin Rarity Distribution</h3>
+                <img src="images/skinRarityChart.png" alt="Chart showing the distribution of SMG skins by rarity tier" class="cs-image">
+                <p>SMGs feature a wide range of skin rarities, from common Consumer Grade to rare Covert items. The distribution above shows that while high-tier SMG skins exist, they're less common than their rifle counterparts, potentially creating unique market opportunities.</p>
+            </div>
             
             <div class="smg-categories">
                 <div class="smg-category">
@@ -126,6 +135,20 @@
                 </div>
             </div>
             
+            <!-- Case Hardened SMG Pattern Guide -->
+            <div class="pattern-guide">
+                <h3>Case Hardened Blue Patterns</h3>
+                <img src="images/blueGemRarePattern.jpg" alt="MAC-10 Case Hardened with rare blue pattern compared to standard pattern" class="cs-image">
+                <p>Like pistols and knives, some SMGs (particularly the MAC-10) feature Case Hardened skins with variable blue patterns. While not as valuable as knife or AK-47 blue gems, MAC-10 Case Hardened skins with high blue percentages can command 2-3x the market price.</p>
+            </div>
+            
+            <!-- Sticker Combinations -->
+            <div class="pattern-guide">
+                <h3>Value-Adding Sticker Combinations</h3>
+                <img src="images/stickerCombo.jpg" alt="SMG with valuable sticker combination showing placement positioning" class="cs-image">
+                <p>Strategic sticker placement on SMGs can significantly increase their value. Matching team stickers or complete tournament sets are particularly desirable. Due to their lower base price, SMGs with valuable stickers can sometimes derive 80%+ of their total value from the stickers alone.</p>
+            </div>
+            
             <h3>Other Notable SMGs</h3>
             <ul>
                 <li>MAC-10
@@ -150,6 +173,13 @@
                     </ul>
                 </li>
             </ul>
+            
+            <!-- Float Value Comparison -->
+            <div class="pattern-guide">
+                <h3>Float Value Impact on SMGs</h3>
+                <img src="images/skinFloatComparisonAK47.png" alt="SMG skin with different float values showing visual differences from Factory New to Battle-Scarred" class="cs-image">
+                <p>Float values affect different SMG skins variously. For example, the UMP-45 Blaze shows minimal visual difference between Factory New and Minimal Wear, making the latter a better value investment. In contrast, the MAC-10 Fade shows noticeable wear even at Minimal Wear condition.</p>
+            </div>
             
             <h3>SMG Investment Strategy</h3>
             <p>When considering SMG skins for investment, keep these factors in mind:</p>
@@ -176,6 +206,13 @@
                     </ul>
                 </li>
             </ol>
+            
+            <!-- Trading Platform Comparison -->
+            <div class="market-data">
+                <h3>Trading Platforms for SMG Skins</h3>
+                <img src="images/tradingPlatform.png" alt="Screenshot of CS:GO skin trading platform showing various SMG listings" class="cs-image">
+                <p>While the Steam Community Market offers convenience, third-party platforms often provide better deals for SMG skins, especially for transaction fees. Always compare prices across multiple platforms before purchasing investment-grade SMG skins.</p>
+            </div>
         </section>
     </main>
     
@@ -188,5 +225,54 @@
             <a href="sitemap.html">Site Map</a>
         </div>
     </footer>
+    <!-- Back to Top Button (JavaScript Feature) -->
+<button id="backToTopBtn" title="Go to top">↑</button>
+
+<style>
+/* Inline CSS for the button appearance */
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #ffcc00;
+  color: #333;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+}
+
+#backToTopBtn:hover {
+  background-color: #e6b800;
+}
+</style>
+
+<script>
+// JavaScript function to handle the Back to Top button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  // Display button when user scrolls down 300px from top
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    document.getElementById("backToTopBtn").style.display = "block";
+  } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top
+document.getElementById("backToTopBtn").onclick = function() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+};
+</script>
 </body>
 </html>

@@ -19,6 +19,8 @@
             <li><a href="rifle.html">Rifle Collection</a></li>
             <li><a href="pistol.html">Pistol Marketplace</a></li>
             <li><a href="smg.html">SMG Inventory</a></li>
+            <li><a href="investment-strategies.html">Investment</a></li>
+            <li><a href="pattern-guide.html">Pattern Guide</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -31,6 +33,13 @@
             <img src="images/knife-collection.jpg" alt="Collection of premium CS:GO knife types including Karambit, Butterfly, and Bayonet" class="featured-image">
             
             <p>Knife skins represent the pinnacle of CS:GO collectibles, often commanding the highest prices in the market. Their rarity, visual appeal, and status symbol nature make them prized possessions among players and investors alike.</p>
+            
+            <!-- Price Distribution Data -->
+            <div class="market-data">
+                <h3>Price Distribution by Knife Type</h3>
+                <img src="images/knivesByAveragePrice.png" alt="Box plot showing price distribution of different CS:GO knife types" class="cs-image">
+                <p>The chart above shows the price distribution across different knife types. Karambit and Butterfly knives command the highest average prices, while gut knives typically sell for the lowest amounts. Outliers (represented by dots) indicate rare pattern variants that fetch significantly higher prices.</p>
+            </div>
             
             <h3>Popular Knife Types</h3>
             <ul>
@@ -64,6 +73,20 @@
                 </li>
             </ul>
             
+            <!-- Pattern Value Analysis -->
+            <div class="pattern-guide">
+                <h3>Knife Pattern Value Guide</h3>
+                <img src="images/blueGemRarePattern.jpg" alt="Case Hardened knife showing valuable blue gem pattern" class="pattern-image cs-image">
+                <p>Case Hardened knives feature randomly generated blue, gold, and purple patterns. The "blue gem" pattern shown above is extremely rare and can increase a knife's value by 5-20x over market price. Pattern index numbers are used by collectors to identify specific valuable variations.</p>
+            </div>
+            
+            <!-- Fade Percentage Guide -->
+            <div class="pattern-guide">
+                <h3>Fade Percentage Guide</h3>
+                <img src="images/GlockFadePercentages.jpg" alt="Comparison of different fade percentages showing color distribution" class="fade-comparison cs-image">
+                <p>Fade skins feature a gradient blend of colors. Higher fade percentages (90%+) include more purple/blue coloration at the tip and command premium prices. This principle applies to all fade knives, with 100% fades being the most sought after by collectors.</p>
+            </div>
+            
             <h3>Top Knife Finishes</h3>
             
             <div class="knife-finishes">
@@ -84,6 +107,13 @@
                     <h4>Crimson Web</h4>
                     <p>Featuring a deep red base with black web patterns, these knives vary in value based on the number and placement of web formations. Factory New versions are extremely rare.</p>
                 </div>
+            </div>
+            
+            <!-- Wear Comparison -->
+            <div class="pattern-guide">
+                <h3>Float Value Comparison for Knives</h3>
+                <img src="images/karambitFadeComparison.jpg" alt="Same knife with different float values showing wear differences" class="cs-image">
+                <p>Float values dramatically affect both appearance and price. Factory New knives with values close to 0.00 can command significant premiums, especially for finishes like Crimson Web and Ultraviolet where wear is highly visible.</p>
             </div>
             
             <h3>Investment Outlook</h3>
@@ -111,6 +141,12 @@
                     </ul>
                 </li>
             </ol>
+            
+            <div class="market-data">
+                <h3>Case Price History</h3>
+                <img src="images/clutchCaseMarketPriceGraph.png" alt="Price history chart for Clutch Case showing value trends over time" class="price-chart">
+                <p>Case prices influence knife value over time. As cases become more expensive (due to discontinued drops), the unboxing cost increases, driving up the market value of knives from those cases. The Clutch Case shown above demonstrates how case prices can rise over time.</p>
+            </div>
         </section>
     </main>
     
@@ -123,5 +159,54 @@
             <a href="sitemap.html">Site Map</a>
         </div>
     </footer>
+    <!-- Back to Top Button (JavaScript Feature) -->
+<button id="backToTopBtn" title="Go to top">↑</button>
+
+<style>
+/* Inline CSS for the button appearance */
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #ffcc00;
+  color: #333;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+}
+
+#backToTopBtn:hover {
+  background-color: #e6b800;
+}
+</style>
+
+<script>
+// JavaScript function to handle the Back to Top button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  // Display button when user scrolls down 300px from top
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    document.getElementById("backToTopBtn").style.display = "block";
+  } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top
+document.getElementById("backToTopBtn").onclick = function() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+};
+</script>
 </body>
 </html>

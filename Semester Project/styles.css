@@ -1,7 +1,7 @@
 /* 
-   CS:GO Skins Market Analysis - Stylesheet
-   Author: [Your Name]
-   Date: March 2025
+   CS:GO Skins Market Analysis - Enhanced Stylesheet for TPV2
+   Author: Spencer Ernst
+   Date: April 2025
    
    This stylesheet contains all the styling for the CS:GO Skins website.
    CSS is organized by sections: General styles, Navigation, Main content, 
@@ -15,35 +15,71 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+:root {
+    --primary-color: #ffcc00;
+    --secondary-color: #333;
+    --accent-color: #3498db;
+    --text-light: #f4f4f4;
+    --text-dark: #333;
+    --hover-color: #e6b800;
+    --bg-light: #f4f4f4;
+    --bg-dark: #222;
+    --card-bg: #fff;
+    --card-border: #ddd;
 }
 
+body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    transition: background-color 0.3s;
+}
+
+/* Enhanced Header with Gradient */
 header {
-    background-color: #ffcc00;
-    color: #333;
+    background: linear-gradient(to right, #222, #333);
+    color: var(--primary-color);
     text-align: center;
     padding: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('images/header-pattern.png');
+    opacity: 0.1;
+    pointer-events: none;
 }
 
 header h1 {
     font-size: 40px;
     margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
     font-size: 18px;
     font-style: italic;
+    color: var(--text-light);
 }
 
-/* Navigation Styles */
+/* Improved Navigation Styles */
 nav {
-    background-color: #333;
+    background-color: var(--secondary-color);
     color: white;
     padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
@@ -51,10 +87,18 @@ nav ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 8px;
 }
 
 nav ul li {
     margin: 0 16px;
+    transition: transform 0.2s;
+}
+
+nav ul li:hover {
+    transform: translateY(-2px);
 }
 
 nav ul li a {
@@ -62,10 +106,27 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     padding: 8px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ffcc00;
+    color: var(--primary-color);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 /* Main Content Styles */
@@ -76,30 +137,50 @@ main {
 }
 
 section {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 32px;
     margin-bottom: 32px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 h2 {
-    color: #333;
+    color: var(--text-dark);
     margin-bottom: 16px;
-    border-bottom: 2px solid #ffcc00;
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 8px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
 }
 
 h3 {
     color: #444;
     margin: 24px 0 16px 0;
+    padding-left: 10px;
+    border-left: 3px solid var(--primary-color);
 }
 
 p {
     margin-bottom: 16px;
+    line-height: 1.8;
 }
 
-/* Lists Styling */
+/* Improved Lists Styling */
 ul, ol {
     margin-left: 32px;
     margin-bottom: 24px;
@@ -109,7 +190,42 @@ ul ul, ol ol, ul ol, ol ul {
     margin-bottom: 8px;
 }
 
-/* Home Page Styles */
+li {
+    margin-bottom: 8px;
+}
+
+/* Card Layout for Skin Collections */
+.skin-card {
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    background-color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.skin-card h4 {
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.skin-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Home Page Styles */
 .content-container {
     display: flex;
     flex-wrap: wrap;
@@ -130,25 +246,43 @@ ul ul, ol ol, ul ol, ol ul {
     align-items: center;
 }
 
+.rarity-chart {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+
 .featured-image {
     max-width: 100%;
-    border-radius: 5px;
-    margin-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.featured-image:hover {
+    transform: scale(1.03);
 }
 
 .start-trading {
     display: inline-block;
-    background-color: #ffcc00;
-    color: #333;
+    background-color: var(--primary-color);
+    color: var(--text-dark);
     padding: 12px 24px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     margin-top: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .start-trading:hover {
-    background-color: #e6b800;
+    background-color: var(--hover-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .update-info {
@@ -156,36 +290,205 @@ ul ul, ol ol, ul ol, ol ul {
     font-style: italic;
 }
 
+/* Video Section Enhancement */
 .video-section {
     margin-top: 32px;
     text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.video-section h3 {
+    text-align: center;
+    border-left: none;
+    padding-left: 0;
 }
 
 .video-section video {
     max-width: 100%;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-top: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Weapon Categories Display */
+.weapon-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.weapon-category {
+    flex: 1;
+    min-width: 280px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.weapon-category:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.weapon-category h3 {
+    color: var(--text-dark);
+    margin-top: 0;
+    padding-left: 0;
+    border-left: none;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.weapon-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Pattern and Float Visualization */
+.pattern-guide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+}
+
+.pattern-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fade-comparison {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.float-scale {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+/* Market Analysis Section */
+.market-analysis {
+    background-color: rgba(0, 0, 0, 0.02);
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.price-chart {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Investment Section */
+.investment-strategy {
+    background-color: rgba(255, 204, 0, 0.05);
+    border: 1px solid rgba(255, 204, 0, 0.2);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.investment-strategy h3 {
+    color: var(--text-dark);
+    border-left: 3px solid var(--primary-color);
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 200px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
 }
 
 /* About Page Styles */
-.team-member {
-    margin-bottom: 32px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #eee;
+.about-section {
+    position: relative;
 }
 
-.team-photo {
-    max-width: 200px;
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+}
+
+.profile-container {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    margin-bottom: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 5px solid white;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Contact Page Styles */
 .contact-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 30px;
 }
 
 .contact-info, .contact-form {
@@ -193,14 +496,36 @@ ul ul, ol ol, ul ol, ol ul {
     min-width: 300px;
 }
 
+.contact-info {
+    background-color: rgba(0, 0, 0, 0.02);
+    padding: 25px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.contact-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.contact-form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 .form-group {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+    color: var(--text-dark);
 }
 
 .form-group input[type="text"],
@@ -211,24 +536,43 @@ ul ul, ol ol, ul ol, ol ul {
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-family: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
+    outline: none;
 }
 
 .checkbox-group, .radio-group {
-    margin-top: 8px;
+    margin-top: 10px;
+}
+
+.checkbox-group label, .radio-group label {
+    font-weight: normal;
+    margin-left: 5px;
 }
 
 .submit-button {
-    background-color: #ffcc00;
-    color: #333;
+    background-color: var(--primary-color);
+    color: var(--text-dark);
     border: none;
     padding: 12px 24px;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .submit-button:hover {
-    background-color: #e6b800;
+    background-color: var(--hover-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Sitemap Styles */
@@ -243,12 +587,13 @@ ul ul, ol ol, ul ol, ol ul {
 
 .sitemap-list li a {
     font-weight: bold;
-    color: #333;
+    color: var(--text-dark);
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .sitemap-list li a:hover {
-    color: #ffcc00;
+    color: var(--primary-color);
 }
 
 .sitemap-list ul {
@@ -259,11 +604,22 @@ ul ul, ol ol, ul ol, ol ul {
 
 /* Footer Styles */
 footer {
-    background-color: #333;
+    background: linear-gradient(to right, #222, #333);
     color: white;
     text-align: center;
-    padding: 24px;
-    margin-top: 32px;
+    padding: 30px;
+    margin-top: 50px;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
 }
 
 .footer-links {
@@ -271,11 +627,14 @@ footer {
 }
 
 .footer-links a {
-    color: #ffcc00;
+    color: var(--primary-color);
     text-decoration: none;
+    transition: color 0.3s;
+    margin: 0 10px;
 }
 
 .footer-links a:hover {
+    color: white;
     text-decoration: underline;
 }
 
@@ -283,6 +642,10 @@ footer {
 @media (max-width: 768px) {
     header {
         padding: 24px;
+    }
+    
+    header h1 {
+        font-size: 32px;
     }
     
     nav ul {
@@ -293,107 +656,248 @@ footer {
     nav ul li {
         margin: 8px 0;
     }
-}
-/* Image Size Control -- AI Generated Content*/
-.contact-image, .profile-photo, .credits-image, .sitemap-image, .featured-image {
-    max-width: 100%;  /* Makes images responsive */
-    height: auto;     /* Maintains aspect ratio */
-    max-height: 300px; /* Sets a maximum height */
-    display: block;   /* Removes extra space below images */
-    margin: 0 auto 20px auto; /* Centers images with bottom margin */
-    border-radius: 5px; /* Optional: slightly rounded corners */
-    border: 1px solid #ddd; /* Optional: light border */
-}
-
-/* Specific size control for profile photo on About page */
-.profile-photo {
-    max-height: 200px;
-    border-radius: 5px;
-}
-
-/* Background image control for contact page */
-.contact-info {
-    position: relative;
-    padding: 20px;
+    
+    .skin-card, .weapon-category {
+        min-width: 100%;
+    }
+    
+    .content-container {
+        flex-direction: column;
+    }
+    
+    .contact-section {
+        flex-direction: column;
+    }
+    
+    .video-section video {
+        width: 100%;
+        height: auto;
+    }
 }
 
-/* If you want to use a background image instead of an inline image */
-.contact-background {
-    background-image: url('contact-background.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-    position: relative;
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+    
+    section {
+        padding: 20px;
+    }
+    
+    .subtitle {
+        font-size: 16px;
+    }
 }
 
-/* Optional overlay for better text readability on background images */
-.contact-background::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
-    z-index: 0;
-}
+/* Let's add some extra styles for weapon-specific pages */
 
-.contact-background * {
-    position: relative;
-    z-index: 1;
-}
-/* Control size of featured images at top of pages */
-.featured-image {
-    max-width: 100%;
-    height: auto;
-    max-height: 300px;
-    display: block;
-    margin: 0 auto 20px auto;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-/* Control size of weapon category images */
-.knife-image, .rifle-image, .pistol-image, .smg-image {
-    max-width: 100%;
-    height: auto;
-    max-height: 200px;
-    display: block;
-    margin: 0 auto 15px auto;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-/* Layout for finish items and weapon categories */
-.knife-finishes, .rifle-categories, .pistol-categories, .smg-categories {
-    display: flex;
-    flex-wrap: wrap;
+/* Knife Page Styles */
+.knife-finishes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     margin: 20px 0;
 }
 
-.finish-item, .knife-category, .rifle-category, .pistol-category, .smg-category {
-    flex: 1;
-    min-width: 250px;
-    background-color: #f9f9f9;
-    padding: 15px;
+.finish-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.finish-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.knife-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Rifle, Pistol, SMG Pages */
+.rifle-categories, .pistol-categories, .smg-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.rifle-category, .pistol-category, .smg-category {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.rifle-category:hover, .pistol-category:hover, .smg-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.rifle-image, .pistol-image, .smg-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Case Opening Simulation Style (for upcoming JavaScript) */
+.case-simulator {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background: linear-gradient(to bottom, #222, #333);
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.case-simulator h3 {
+    color: var(--primary-color);
+    border-left: none;
+    padding-left: 0;
+}
+
+.simulator-button {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
     border-radius: 5px;
-    border: 1px solid #eee;
-    margin-bottom: 20px;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Make sure text doesn't overflow its container */
-.finish-item h4, .knife-category h3, .rifle-category h3, .pistol-category h3, .smg-category h3 {
-    margin-top: 0;
+.simulator-button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .knife-finishes, .rifle-categories, .pistol-categories, .smg-categories {
-        flex-direction: column;
-    }
-    
-    .knife-image, .rifle-image, .pistol-image, .smg-image {
-        max-height: 180px;
-    }
+.case-result {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Float Value Visualization (for upcoming JavaScript) */
+.float-visualization {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+}
+
+.float-slider {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.float-display {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.float-value {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+.float-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+    transition: opacity 0.3s;
+}
+
+/* Preparation for dark mode toggle (to be implemented with JavaScript in TPF) */
+[data-theme="dark"] {
+    --text-light: #f4f4f4;
+    --text-dark: #f4f4f4;
+    --bg-light: #333;
+    --card-bg: #444;
+    --card-border: #555;
+}
+
+/* Image Size Control */
+.contact-image, .profile-photo, .credits-image, .sitemap-image, .featured-image {
+    max-width: 100%;  
+    height: auto;     
+    max-height: 300px; 
+    display: block;   
+    margin: 0 auto 20px auto; 
+    border-radius: 8px; 
+    border: 1px solid #ddd; 
+}
+
+/* Additional class to handle the new images */
+.cs-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin: 15px 0;
+    transition: transform 0.3s;
+}
+
+.cs-image:hover {
+    transform: scale(1.02);
+}
+
+/* Market data section */
+.market-data {
+    background-color: rgba(52, 152, 219, 0.05);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 3px solid var(--accent-color);
+}
+
+.market-data h3 {
+    color: var(--accent-color);
+    border-left: none;
+    padding-left: 0;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.price-table th {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+.price-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.price-table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.price-table tr:hover {
+    background-color: rgba(255, 204, 0, 0.1);
 }
