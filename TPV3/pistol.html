@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pistol Marketplace - CS:GO Skins Market Analysis</title>
+        <link rel="stylesheet" href="styles.css">
+        <!-- jQuery for interactive effects -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
+        <!-- 
+        ===== jQuery Implementation =====
+        1. Gallery Lightbox - Located in jquery-effects.js, implements image gallery with lightbox
+        2. Form Validation - Located in jquery-effects.js, validates contact form inputs
+        3. Accordion - Located in jquery-effects.js, creates expandable/collapsible sections
+        4. Hover Effects - Located in jquery-effects.js, shows additional details on hover
+        
+        ===== JavaScript Implementation =====
+        1. Theme Switcher - Located in main.js, allows toggling between light and dark mode
+        2. Market Status - Located in main.js, shows different market indicators using conditional logic
+        3. Back to Top Button - Located inline, appears when scrolling down the page
+        4. Mobile Navigation - Located in main.js, enhances navigation for mobile devices
+        -->
+    </head>
+<body>
+    <header>
+        <h1>Pistol Marketplace</h1>
+        <p class="subtitle">Sidearm skin analysis and investment opportunities</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html" id="nav-home">Home</a></li>
+            <li><a href="knife.html" id="nav-knife">Knife Skins</a></li>
+            <li><a href="rifle.html" id="nav-rifle">Rifle Collection</a></li>
+            <li><a href="pistol.html" id="nav-pistol">Pistol Marketplace</a></li>
+            <li><a href="smg.html" id="nav-smg">SMG Inventory</a></li>
+            <li><a href="sticker-investments.html" id="nav-sticker">Sticker Investments</a></li>
+            <li><a href="trading-platforms.html" id="nav-trading">Trading Platforms</a></li>
+            <li><a href="about.html" id="nav-about">About Me</a></li>
+            <li><a href="contact.html" id="nav-contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+    <section class="container section">
+      <div class="card">
+        <section class="pistol-section">
+            <h2>Premium Pistol Skins</h2>
+            <p>Pistol skins offer excellent value in the CS:GO market. As starting weapons used in pistol rounds and eco buys, they receive significant in-game visibility despite their lower average price compared to rifles and knives.</p>
+            
+            <img src="images/pistol-collection.jpg" alt="Collection of popular CS:GO pistol skins including Desert Eagle, USP-S, and Glock-18 designs" class="featured-image">
+            
+            <!-- Desert Eagle Pattern Guide -->
+            <div class="pattern-guide">
+                <h3>Desert Eagle Pattern Guide</h3>
+                <img src="images/deagleGems.png" alt="Desert Eagle with different valuable patterns highlighted" class="cs-image">
+                <p>The Desert Eagle Case Hardened skin features a randomly generated pattern of blue, gold, and purple. "Blue gems" with high percentages of blue coloration can be worth 3-10x the market price. Similarly, the Blaze skin's pattern affects flame placement, with centered flames being most desirable.</p>
+            </div>
+            
+            <!-- Glock Fade Percentage Guide -->
+            <div class="pattern-guide">
+                <h3>Glock Fade Percentage Guide</h3>
+                <img src="images/GlockFadePercentages.jpg" alt="Comparison of different Glock Fade percentages showing color gradients" class="cs-image">
+                <p>The Glock-18 Fade varies in appearance based on its "fade percentage." Higher fade percentages display more pronounced purple at the front of the slide. Full fades (95-100%) command significant price premiums over lower percentage variants.</p>
+            </div>
+            
+            <div class="pistol-categories">
+                <div class="pistol-category">
+                    <h3>Desert Eagle Skins</h3>
+                    <img src="images/deagle-skin.jpg" alt="Desert Eagle Printstream skin with black and white pattern" class="pistol-image">
+                    <p>The Desert Eagle (Deagle) is the most popular pistol for skin collectors due to its high damage, distinctive appearance, and frequent use in highlight-worthy plays.</p>
+                    
+                    <h4>Notable Desert Eagle Skins:</h4>
+                    <ul>
+                        <li>Blaze
+                            <ul>
+                                <li>Released in The Dust Collection</li>
+                                <li>Distinctive flame design on black base</li>
+                                <li>Limited supply since the collection is discontinued</li>
+                            </ul>
+                        </li>
+                        <li>Printstream
+                            <ul>
+                                <li>Modern black and white design with animated elements</li>
+                                <li>Clean aesthetic with high contrast</li>
+                                <li>Popular among professional players</li>
+                            </ul>
+                        </li>
+                        <li>Code Red
+                            <ul>
+                                <li>Vibrant red and black cyberpunk aesthetic</li>
+                                <li>Part of the Horizon Case</li>
+                                <li>Visual design stands out in gameplay</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="pistol-category">
+                    <h3>USP-S & P2000 Skins</h3>
+                    <img src="images/usp-skin.jpg" alt="USP-S Kill Confirmed skin with red target design" class="pistol-image">
+                    <p>As the Counter-Terrorist starting pistols, the USP-S and P2000 feature prominently in pistol rounds. Players can equip either model, creating separate markets for their skins.</p>
+                    
+                    <h4>Notable USP-S & P2000 Skins:</h4>
+                    <ul>
+                        <li>USP-S Kill Confirmed
+                            <ul>
+                                <li>Features a striking target reticle design</li>
+                                <li>Strong demand due to visual appeal</li>
+                                <li>Highly visible during gameplay</li>
+                            </ul>
+                        </li>
+                        <li>USP-S Neo-Noir
+                            <ul>
+                                <li>Part of the Neo-Noir art series</li>
+                                <li>Purple and pink cyberpunk-noir aesthetic</li>
+                                <li>Popular in competitive play</li>
+                            </ul>
+                        </li>
+                        <li>P2000 Ocean Foam
+                            <ul>
+                                <li>Clean turquoise design</li>
+                                <li>Used in trade-up contracts for Desert Eagle Golden Koi</li>
+                                <li>Value tied to trade-up potential</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="pistol-category">
+                    <h3>Glock-18 Skins</h3>
+                    <img src="images/glock-skin.jpg" alt="Glock-18 Fade skin with colorful gradient" class="pistol-image">
+                    <p>As the Terrorist starting pistol, the Glock-18 appears in nearly every competitive match. Its skins are especially visible during pistol rounds, which attract high viewership. This glock also has a sticker on it, one of the most valuable in the game.</p>
+                    
+                    <h4>Notable Glock-18 Skins:</h4>
+                    <ul>
+                        <li>Fade
+                            <ul>
+                                <li>Available only from early CS:GO weapon cases</li>
+                                <li>Gradient of yellow, pink, and purple</li>
+                                <li>Highly sought after by collectors</li>
+                            </ul>
+                        </li>
+                        <li>Water Elemental
+                            <ul>
+                                <li>Vibrant art style with fire spirit design</li>
+                                <li>Popular budget-friendly option</li>
+                                <li>Consistently liquid in trading markets</li>
+                            </ul>
+                        </li>
+                        <li>Bullet Queen
+                            <ul>
+                                <li>Detailed artwork with anime-inspired character</li>
+                                <li>Part of the Prisma 2 Collection</li>
+                                <li>Popular for its unique visual style</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Trade Up Contract Section -->
+            <div class="pattern-guide">
+                <h3>Pistol Trade-Up Strategies</h3>
+                <img src="images/pistolTradeUp.jpg" alt="Trade up contract using pistol skins to obtain higher-tier skins" class="cs-image">
+                <p>Pistol skins are often used in lucrative trade-up contracts. For example, ten P2000 Ocean Foam (Classified) skins can be traded up for a Desert Eagle Golden Koi or an AWP Graphite. Strategic trade-ups focusing on collection distribution can yield significant profits.</p>
+            </div>
+            
+            <!-- Sticker Placement Value -->
+            <div class="pattern-guide">
+                <h3>Sticker Placement on Pistols</h3>
+                <img src="images/stickerPlacements.png" alt="Gun showing optimal sticker placement positions" class="cs-image">
+                <p>Sticker placement significantly impacts added value. On most pistols, the position above the handle (closest to the player's view in-game) is considered the most valuable. Rare tournament stickers from early majors can increase a pistol's value by 10-50% of the sticker's price.</p>
+            </div>
+            
+            <h3>Other Notable Pistols</h3>
+            <ul>
+                <li>Five-SeveN
+                    <ul>
+                        <li>Case Hardened (valuable blue patterns)</li>
+                        <li>Monkey Business (banana magazine design)</li>
+                        <li>Hyper Beast (colorful monster artwork)</li>
+                    </ul>
+                </li>
+                <li>CZ75-Auto
+                    <ul>
+                        <li>Victoria (gold filigree design)</li>
+                        <li>Xiangliu (dragon-inspired artwork)</li>
+                        <li>Yellow Jacket (wasp-themed design)</li>
+                    </ul>
+                </li>
+                <li>Dual Berettas
+                    <ul>
+                        <li>Cobalt Quartz (blue crystalline pattern)</li>
+                        <li>Hemoglobin (blood-red design)</li>
+                        <li>Marina (nautical blue and white pattern)</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="market-data">
+                <h3>Rare Pattern Pricing Guide</h3>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Pistol</th>
+                            <th>Pattern Type</th>
+                            <th>Market Price Multiplier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Desert Eagle Case Hardened</td>
+                            <td>Blue Gem (90%+ blue)</td>
+                            <td>5-10x</td>
+                        </tr>
+                        <tr>
+                            <td>Five-SeveN Case Hardened</td>
+                            <td>Blue Gem (90%+ blue)</td>
+                            <td>3-8x</td>
+                        </tr>
+                        <tr>
+                            <td>Glock-18 Fade</td>
+                            <td>Full Fade (95-100%)</td>
+                            <td>1.5-2x</td>
+                        </tr>
+                        <tr>
+                            <td>USP-S Blueprint</td>
+                            <td>Clean Blue Pattern</td>
+                            <td>1.2-1.5x</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>Investment Considerations</h3>
+            <p>When adding pistol skins to your investment portfolio, consider these factors:</p>
+            <ol>
+                <li>First-Round Visibility
+                    <ul>
+                        <li>Pistols get guaranteed exposure in pistol rounds</li>
+                        <li>Desert Eagle sees significant play in eco rounds</li>
+                        <li>CT vs. T side usage affects visibility rates</li>
+                    </ul>
+                </li>
+                <li>Price-to-Prestige Ratio
+                    <ul>
+                        <li>Pistols offer lower entry points than knives and rifles</li>
+                        <li>Some rare pistol skins outperform higher-tier weapons</li>
+                        <li>Greater quantity can be purchased for diversification</li>
+                    </ul>
+                </li>
+                <li>Collection Status
+                    <ul>
+                        <li>Discontinued collections like Dust and Assault appreciate faster</li>
+                        <li>Older case skins may benefit from case price increases</li>
+                        <li>Limited-time operation drops become scarcer over time</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 CS:GO Skins Market Analysis. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="about.html">About Me</a> | 
+            <a href="contact.html">Contact</a> | 
+            <a href="credits.html">Credits</a> | 
+            <a href="sitemap.html">Site Map</a>
+        </div>
+    </footer>
+    <!-- Back to Top Button (JavaScript Feature) -->
+<button id="backToTopBtn" title="Go to top">↑</button>
+
+<style>
+/* Inline CSS for the button appearance */
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #ffcc00;
+  color: #333;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+}
+
+#backToTopBtn:hover {
+  background-color: #e6b800;
+}
+</style>
+
+<script>
+// JavaScript function to handle the Back to Top button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  // Display button when user scrolls down 300px from top
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    document.getElementById("backToTopBtn").style.display = "block";
+  } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top
+document.getElementById("backToTopBtn").onclick = function() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+};
+</script>
+
+<!-- Lightbox viewer -->
+<div id="lightbox">
+  <div class="lightbox-content">
+    <span class="close-lightbox">&times;</span>
+    <img id="lightbox-image" src="" alt="">
+    <div id="lightbox-caption"></div>
+  </div>
+</div>
+
+<!-- Scripts for interactivity -->
+<script src="main.js"></script>
+<script src="jquery-effects.js"></script>
+</body>
+
+</html>

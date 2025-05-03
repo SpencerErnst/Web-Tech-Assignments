@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pistol Marketplace - CS:GO Skins Market Analysis</title>
+        <link rel="stylesheet" href="styles.css">
+        <!-- jQuery for interactive effects -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
+        <!-- 
+        ===== jQuery Implementation =====
+        1. Gallery Lightbox - Located in jquery-effects.js, implements image gallery with lightbox
+        2. Form Validation - Located in jquery-effects.js, validates contact form inputs
+        3. Accordion - Located in jquery-effects.js, creates expandable/collapsible sections
+        4. Hover Effects - Located in jquery-effects.js, shows additional details on hover
+        
+        ===== JavaScript Implementation =====
+        1. Theme Switcher - Located in main.js, allows toggling between light and dark mode
+        2. Market Status - Located in main.js, shows different market indicators using conditional logic
+        3. Back to Top Button - Located inline, appears when scrolling down the page
+        4. Mobile Navigation - Located in main.js, enhances navigation for mobile devices
+        -->
+    </head>
+<body>
+    <header>
+        <h1>Rifle Collection</h1>
+        <p class="subtitle">Primary weapon skins and investment analysis</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html" id="nav-home">Home</a></li>
+            <li><a href="knife.html" id="nav-knife">Knife Skins</a></li>
+            <li><a href="rifle.html" id="nav-rifle">Rifle Collection</a></li>
+            <li><a href="pistol.html" id="nav-pistol">Pistol Marketplace</a></li>
+            <li><a href="smg.html" id="nav-smg">SMG Inventory</a></li>
+            <li><a href="sticker-investments.html" id="nav-sticker">Sticker Investments</a></li>
+            <li><a href="trading-platforms.html" id="nav-trading">Trading Platforms</a></li>
+            <li><a href="about.html" id="nav-about">About Me</a></li>
+            <li><a href="contact.html" id="nav-contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="container section">
+            <div class="card">
+                <h2>Popular Rifle Skins</h2>
+                <img src="images/rifle-collection.jpg" alt="Collection of popular CS:GO rifle skins including AK-47, M4A4, and AWP designs" style="max-height: 400px; width: 100%; object-fit: cover; margin-bottom: 1.5rem;">
+                
+                <p>Rifle skins make up the core of the CS:GO skin economy, with the AK-47 and M4A4/M4A1-S leading in popularity due to their frequent use in competitive play. These weapons balance price, liquidity, and investment potential.</p>
+                
+                <p>Unlike knife skins, rifles are used in nearly every round of play, giving them high visibility and consistent demand. Some rifle skins, particularly those from discontinued collections, have shown extraordinary price appreciation over time.</p>
+                
+                <!-- Market Status Indicator - Shows current rifle market status -->
+                <div class="market-status">
+                    <div class="status-icon">📈</div>
+                    <div class="status-content">
+                        <p class="status-label">Rifle Skins Market Trend</p>
+                        <p class="status-value" style="color: #4CAF50;">STRONG</p>
+                        <p class="status-message">Rifle skins have seen steady appreciation since the CS2 transition, with AK-47 and AWP skins leading the market in stability and growth.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skin Categories - Will use jQuery hover effects -->
+            <div class="grid">
+                <div class="col-4 col-sm-12">
+                    <div class="skin-card">
+                        <div class="skin-card-img">
+                            <img src="images/ak47-skin.jpg" alt="AK-47 Fire Serpent skin with green dragon design">
+                        </div>
+                        <div class="skin-card-content">
+                            <h4 class="skin-card-title">AK-47 Skins</h4>
+                            <p class="skin-card-price">$10 - $400,000+</p>
+                            <div class="skin-card-details">
+                                <p>The AK-47 is the most popular rifle in CS:GO, used by Terrorists in virtually every competitive match. Its skins typically maintain strong value due to consistent demand.</p>
+                                <div class="accordion" style="margin-top: 1rem;">
+                                    <div class="accordion-header">Notable AK-47 Skins</div>
+                                    <div class="accordion-panel">
+                                        <div class="accordion-content">
+                                            <ul>
+                                                <li><strong>Fire Serpent</strong> - Released in Operation Bravo Case, limited availability drives high prices ($700-$2,000)</li>
+                                                <li><strong>Wild Lotus</strong> - Part of The St. Marc Collection, rarely obtainable through trade-up contracts ($2,000-$5,000)</li>
+                                                <li><strong>Case Hardened</strong> - Pattern-based pricing, "blue gem" patterns can reach extraordinary values ($500-$400,000+)</li>
+                                                <li><strong>Asiimov</strong> - Iconic white, orange and black sci-fi design, consistently popular ($50-$200)</li>
+                                                <li><strong>Redline</strong> - Budget-friendly investment with strong liquidity ($15-$150 depending on stickers)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-4 col-sm-12">
+                    <div class="skin-card">
+                        <div class="skin-card-img">
+                            <img src="images/m4-skin.jpg" alt="M4A4 Howl skin with red wolf design">
+                        </div>
+                        <div class="skin-card-content">
+                            <h4 class="skin-card-title">M4A4 & M4A1-S</h4>
+                            <p class="skin-card-price">$10 - $50,000+</p>
+                            <div class="skin-card-details">
+                                <p>The Counter-Terrorist equivalents to the AK-47, these rifles feature some of the most coveted skins in the game. Players can choose between the M4A4 or M4A1-S, affecting which skins they can use.</p>
+                                <div class="accordion" style="margin-top: 1rem;">
+                                    <div class="accordion-header">Notable M4 Skins</div>
+                                    <div class="accordion-panel">
+                                        <div class="accordion-content">
+                                            <ul>
+                                                <li><strong>M4A4 Howl</strong> - Contraband rarity due to copyright issues, the only contraband skin in the game ($1,800-$50,000+)</li>
+                                                <li><strong>M4A1-S Knight</strong> - Used in trade-up contracts for AWP Dragon Lore, clean gold design ($500-$1,500)</li>
+                                                <li><strong>M4A4 Poseidon</strong> - Rare drop from The Gods and Monsters Collection, Greek mythology-inspired design ($800-$2,500)</li>
+                                                <li><strong>M4A1-S Printstream</strong> - Clean black and white design with animated elements ($100-$300)</li>
+                                                <li><strong>M4A4 Asiimov</strong> - Part of the popular Asiimov collection, matching AWP and AK design ($50-$300)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-4 col-sm-12">
+                    <div class="skin-card">
+                        <div class="skin-card-img">
+                            <img src="images/awp-skin.jpg" alt="AWP Dragon Lore skin with golden dragon design">
+                        </div>
+                        <div class="skin-card-content">
+                            <h4 class="skin-card-title">AWP Skins</h4>
+                            <p class="skin-card-price">$10 - $100,000+</p>
+                            <div class="skin-card-details">
+                                <p>The AWP is CS:GO's iconic sniper rifle, capable of one-shot kills. Its high-profile nature in gameplay makes its skins among the most visible and desirable in the game.</p>
+                                <div class="accordion" style="margin-top: 1rem;">
+                                    <div class="accordion-header">Notable AWP Skins</div>
+                                    <div class="accordion-panel">
+                                        <div class="accordion-content">
+                                            <ul>
+                                                <li><strong>Dragon Lore</strong> - The most prestigious skin in CS:GO, extremely rare drop from The Cobblestone Collection ($2,000-$100,000+)</li>
+                                                <li><strong>Gungnir</strong> - Norse mythology-inspired design, part of The Norse Collection ($3,000-$10,000)</li>
+                                                <li><strong>Medusa</strong> - Greek mythology-themed design from The Gods and Monsters Collection ($1,500-$6,000)</li>
+                                                <li><strong>Asiimov</strong> - One of the most recognizable skins, featured in many tournaments ($100-$300)</li>
+                                                <li><strong>Neo-Noir</strong> - Stylized art with purple and pink cyberpunk aesthetic ($50-$200)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Special Feature: The Howl Story -->
+            <div class="card">
+                <h3>The Howl: CS:GO's Only Contraband Skin</h3>
+                <div class="grid">
+                    <div class="col-8 col-md-12">
+                        <p>The M4A4 Howl holds a unique position in CS:GO's skin ecosystem as the only item with Contraband rarity. Originally released in the Huntsman Case with Covert (red) rarity, the skin became embroiled in a copyright controversy that permanently altered its status.</p>
+                        
+                        <div class="accordion">
+                            <div class="accordion-header">The Copyright Incident</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <p>Shortly after the Howl's release in 2014, it was discovered that the artwork had been plagiarized. The original creator "Auzzii" had taken an image from DeviantArt artist "Canisalbus" without permission and submitted it to the Steam Workshop.</p>
+                                    
+                                    <p>When Valve was notified of the DMCA violation, they took unprecedented action:</p>
+                                    <ol>
+                                        <li>Removed the Huntsman Case from active drops</li>
+                                        <li>Replaced the Howl's design with an original Valve-created artwork</li>
+                                        <li>Created a new "Contraband" rarity tier specifically for this skin</li>
+                                        <li>Stopped all new copies from entering circulation</li>
+                                    </ol>
+                                    
+                                    <p>This immediate supply cap transformed the Howl from a standard Covert skin into a limited-quantity collector's item overnight.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-header">Investment Performance</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <p>The Howl has been one of CS:GO's best-performing investment assets:</p>
+                                    <ul>
+                                        <li><strong>Original Price (2014):</strong> ~$50-100 USD</li>
+                                        <li><strong>Current Price (Factory New):</strong> $5,000-10,000 USD</li>
+                                        <li><strong>StatTrak™ Factory New:</strong> $15,000-50,000 USD</li>
+                                        <li><strong>CAGR:</strong> Approximately 40-50% annual growth</li>
+                                    </ul>
+                                    
+                                    <p>The Howl's price has shown remarkable resilience during market downturns, typically recovering faster than other high-tier skins. Its unique status and guaranteed finite supply make it one of the safest long-term investments in the CS:GO ecosystem.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-4 col-md-12">
+                        <img src="images/m4-skin.jpg" alt="M4A4 Howl - Contraband skin" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                        <div class="market-status" style="margin-bottom: 0;">
+                            <div class="status-content">
+                                <p class="status-label">Howl Market Status</p>
+                                <p class="status-value" style="color: #4CAF50;">EXCEPTIONAL</p>
+                                <p class="status-message">Limited supply guarantees long-term price appreciation potential.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Investment Strategy -->
+            <div class="card">
+                <h3>Rifle Skin Investment Strategy</h3>
+                <p>When investing in rifle skins, consider these factors:</p>
+                
+                <div class="grid">
+                    <div class="col-4 col-sm-12">
+                        <div class="card" style="height: 100%;">
+                            <h4>Weapon Usage Rate</h4>
+                            <ul>
+                                <li>AK-47, M4A4/M4A1-S, and AWP see the most gameplay</li>
+                                <li>Meta changes can affect specific model popularity</li>
+                                <li>Tournament visibility increases demand</li>
+                                <li>Consider professional player preferences</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-4 col-sm-12">
+                        <div class="card" style="height: 100%;">
+                            <h4>Collection Status</h4>
+                            <ul>
+                                <li>Discontinued collections typically appreciate faster</li>
+                                <li>Operation-exclusive drops become more scarce over time</li>
+                                <li>Limited release windows affect long-term supply</li>
+                                <li>Older collections (Bravo, eSports 2013/14) offer premium investment potential</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-4 col-sm-12">
+                        <div class="card" style="height: 100%;">
+                            <h4>Visual Appeal</h4>
+                            <ul>
+                                <li>Distinctive, high-contrast designs retain popularity</li>
+                                <li>Professional player preferences influence market trends</li>
+                                <li>Unique patterns (like AK Case Hardened blue gems) command premiums</li>
+                                <li>Clean designs typically maintain value better than busy patterns</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1.5rem;">
+                    <h4>Investment Tiers</h4>
+                    <div class="grid">
+                        <div class="col-3 col-sm-6">
+                            <div class="card" style="background-color: #e8f5e9; height: 100%;">
+                                <h5 style="color: #2e7d32;">Entry Level</h5>
+                                <p><strong>Budget:</strong> $10-50</p>
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>AK-47 Redline (FT)</li>
+                                    <li>AWP Asiimov (BS)</li>
+                                    <li>M4A4 Neo-Noir (FT)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-3 col-sm-6">
+                            <div class="card" style="background-color: #e3f2fd; height: 100%;">
+                                <h5 style="color: #1565c0;">Mid Tier</h5>
+                                <p><strong>Budget:</strong> $50-300</p>
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>AK-47 Bloodsport (FN)</li>
+                                    <li>AWP Containment Breach (FN)</li>
+                                    <li>M4A1-S Printstream (FN)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-3 col-sm-6">
+                            <div class="card" style="background-color: #fff8e1; height: 100%;">
+                                <h5 style="color: #ff8f00;">High Tier</h5>
+                                <p><strong>Budget:</strong> $300-1,000</p>
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>AK-47 Fire Serpent (FT)</li>
+                                    <li>AWP Asiimov w/ Stickers (FN)</li>
+                                    <li>M4A4 Poseidon (MW)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-3 col-sm-6">
+                            <div class="card" style="background-color: #ffebee; height: 100%;">
+                                <h5 style="color: #c62828;">Collector</h5>
+                                <p><strong>Budget:</strong> $1,000+</p>
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>AK-47 Case Hardened (Blue Gem)</li>
+                                    <li>AWP Dragon Lore (FN)</li>
+                                    <li>M4A4 Howl (FN)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery with Lightbox - Uses jQuery -->
+            <h3>Rifle Skin Gallery</h3>
+            <div class="gallery">
+                <div class="gallery-item" data-caption="AK-47 | Fire Serpent - Operation Bravo Collection, highly valued for its rarity">
+                    <img src="images/ak47-skin.jpg" alt="AK-47 Fire Serpent">
+                </div>
+                <div class="gallery-item" data-caption="M4A4 | Howl - The only Contraband rarity skin in CS:GO">
+                    <img src="images/m4-skin.jpg" alt="M4A4 Howl">
+                </div>
+                <div class="gallery-item" data-caption="AWP | Dragon Lore - The most prestigious AWP skin">
+                    <img src="images/awp-skin.jpg" alt="AWP Dragon Lore">
+                </div>
+                <div class="gallery-item" data-caption="AK-47 | Case Hardened - Blue Gem pattern with rare blue coverage">
+                    <img src="images/blueGemRarePattern.jpg" alt="AK-47 Case Hardened Blue Gem">
+                </div>
+                <div class="gallery-item" data-caption="M4A1-S | Knight - Used in trade-up contracts for AWP Dragon Lore">
+                    <img src="images/rifle-collection.jpg" alt="M4A1-S Knight">
+                </div>
+                <div class="gallery-item" data-caption="AK-47 | Neon Rider - Vibrant design with cyberpunk aesthetic">
+                    <img src="images/rifle-collection.jpg" alt="AK-47 Neon Rider">
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 CS:GO Skins Market Analysis. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About Me</a> | 
+                <a href="contact.html">Contact</a> | 
+                <a href="credits.html">Credits</a> | 
+                <a href="sitemap.html">Site Map</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Lightbox viewer -->
+    <div id="lightbox">
+        <div class="lightbox-content">
+          <span class="close-lightbox">&times;</span>
+          <img id="lightbox-image" src="" alt="">
+          <div id="lightbox-caption"></div>
+        </div>
+        </div>
+    
+    <!-- JavaScript files loaded last for optimal page loading -->
+    <script src="main.js"></script>
+    <script src="jquery-effects.js"></script>
+</body>
+</html>

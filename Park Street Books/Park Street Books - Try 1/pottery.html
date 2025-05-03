@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pottery Place | Park Street Books & Toys</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Additional styles specific to the pottery page */
+        .page-header {
+            background-color: #fff8e1;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .pottery-intro {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pottery-features {
+            padding: 4rem 0;
+            background-color: var(--light);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .feature-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-content h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-content p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .pottery-kits {
+            padding: 4rem 0;
+            background-color: #f9f3ff;
+        }
+        
+        .kits-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        .kit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .kit-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .kit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .kit-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .kit-content {
+            padding: 1.5rem;
+        }
+        
+        .kit-content h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .kit-price {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .testimonials {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+        
+        .testimonial-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: rgba(74, 124, 89, 0.2);
+            position: absolute;
+            top: -15px;
+            left: 10px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: the gallery space from 5 available photos40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .faq-section {
+            padding: 4rem 0;
+            background-color: #eaf3ed;
+        }
+        
+        .faq-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .book-cta {
+            padding: 4rem 0;
+            background-color: var(--secondary);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .book-cta h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .book-cta p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn-white {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--secondary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-white:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .feature-card {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-banner">
+            <p>New England's Largest Children's Book & Toy Store and Paint-Your-Own Pottery Place</p>
+        </div>
+        <div class="header-main">
+            <div class="logo">
+                <img src="images/parkStreetLogo.png" alt="Park Street Books & Toys Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="pottery.html" class="active">Pottery Place</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> Cart (0)</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>The Pottery Place</h1>
+            <div class="pottery-intro">
+                <p>Welcome to The Pottery Place, where creativity flows and memories are made! Our paint-your-own pottery studio offers a unique and fun experience for all ages, from toddlers to adults.</p>
+                <p>The Pottery Place has THE best prices and no extra fees!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pottery-features">
+        <div class="container">
+            <h2>Our Pottery Experience</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="images/forCreators.png" alt="In-Studio Painting">
+                    <div class="feature-content">
+                        <h3>In-Studio Painting</h3>
+                        <p>Visit our bright and welcoming studio to paint your pottery in a creative, social environment. We provide all the materials and guidance you need to create a masterpiece.</p>
+                        <a href="#book-now" class="btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <img src="images/forCrafters.png" alt="Pottery To-Go Kits">
+                    <div class="feature-content">
+                        <h3>Pottery To-Go Kits</h3>
+                        <p>Can't make it to the studio? Take the pottery experience home with our to-go kits. Each kit contains everything you need to create your masterpiece at home.</p>
+                        <a href="#pottery-kits" class="btn-primary">Shop Kits</a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <img src="images/forLearners.png" alt="Private Events">
+                    <div class="feature-content">
+                        <h3>Private Events</h3>
+                        <p>Celebrate birthdays, team buildings, or special occasions with a private pottery painting event. Custom packages available for groups of all sizes.</p>
+                        <a href="contact.html" class="btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pottery-kits" class="pottery-kits">
+        <div class="container">
+            <div class="kits-intro">
+                <h2>Paint-at-Home Pottery Kits</h2>
+                <p>Need a paint-at-home pottery kit? We've got you covered! Our easy-to-use kits include everything you need to create beautiful pottery from the comfort of your home.</p>
+            </div>
+            <div class="kit-grid">
+                <div class="kit-card">
+                    <img src="forCreators.jpg" alt="Family Pottery Kit">
+                    <div class="kit-content">
+                        <h3>Family Pottery Kit</h3>
+                        <p>Perfect for families! Kit includes 4 pieces of pottery, paints, brushes, and instructions.</p>
+                        <div class="kit-price">$49.99</div>
+                        <a href="#" class="btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="kit-card">
+                    <img src="forCreators.jpg" alt="Kids Pottery Kit">
+                    <div class="kit-content">
+                        <h3>Kids Pottery Kit</h3>
+                        <p>Designed for young artists! Includes 2 pieces of pottery, child-friendly paints, brushes, and fun stencils.</p>
+                        <div class="kit-price">$29.99</div>
+                        <a href="#" class="btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="kit-card">
+                    <img src="forCreators.jpg" alt="Adult Pottery Kit">
+                    <div class="kit-content">
+                        <h3>Adult Pottery Kit</h3>
+                        <p>Create sophisticated pieces with our adult kit. Includes 2 pieces of pottery, premium paints, fine brushes, and detailed instructions.</p>
+                        <div class="kit-price">$39.99</div>
+                        <a href="#" class="btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonial-heading">
+                <h2>What Our Customers Say</h2>
+                <p>Don't just take our word for it - hear from our happy pottery painters!</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Our family had such a wonderful time at The Pottery Place! The staff was friendly and helpful, and the atmosphere was perfect for creativity. We'll definitely be back!</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">LM</div>
+                        <div class="author-info">
+                            <h4>Lisa M.</h4>
+                            <p>Medfield, MA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">I hosted my daughter's birthday party at The Pottery Place and it was a huge hit! The kids loved painting their own pieces, and the parents appreciated the reasonable prices and no hidden fees.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">JD</div>
+                        <div class="author-info">
+                            <h4>James D.</h4>
+                            <p>Walpole, MA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">I ordered a to-go kit during the pandemic and was amazed at how comprehensive it was. Everything I needed was included, and the instructions were clear. My mug turned out beautiful!</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">SK</div>
+                        <div class="author-info">
+                            <h4>Sarah K.</h4>
+                            <p>Dover, MA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-heading">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <p class="faq-question">Do I need to have artistic skills to paint pottery?</p>
+                    <p class="faq-answer">Not at all! Our studio is designed for all skill levels. We provide stencils, idea books, and our friendly staff is always available to help with techniques and suggestions.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">How long does it take for my pottery to be ready after painting?</p>
+                    <p class="faq-answer">Once you've finished painting your pottery, we'll glaze and fire it in our kiln. This process usually takes about 7-10 days. We'll contact you when your masterpiece is ready for pickup!</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Is the pottery food-safe after firing?</p>
+                    <p class="faq-answer">Yes! All our pottery and glazes are food-safe and dishwasher-safe after firing.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Do I need to make a reservation for in-studio painting?</p>
+                    <p class="faq-answer">Walk-ins are welcome for individuals and small groups (up to 4 people). For larger groups or private events, we recommend making a reservation at least one week in advance.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">What's included in the to-go pottery kits?</p>
+                    <p class="faq-answer">Our to-go kits include selected pottery pieces, paints, brushes, instructions, and everything else you need to create your masterpiece at home. Once you've finished painting, simply return your pieces to us for glazing and firing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book-now" class="book-cta">
+        <div class="container">
+            <h2>Ready to Get Creative?</h2>
+            <p>Whether you're planning a family outing, a date night, or a solo creative session, The Pottery Place is the perfect destination. No reservations needed for small groups - just stop by during our open hours!</p>
+            <a href="contact.html" class="btn-white">Contact Us</a>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join Our Community</h2>
+            <p>Sign up for PSB news blasts, info on happenings and the occasional highlights of Jim James' shenanigans :)</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn-primary">Sign Up</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/parkStreetLogo.png" alt="Park Street Books & Toys Logo" class="footer-logo">
+                    <p>Park Street Books & Toys plus The Pottery Place 9am-6pm (Mon-Sat) and 10am-5pm (Sun)</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="pottery.html">Pottery Place</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 504 Main Street, Medfield, MA 02052</p>
+                    <p><i class="fas fa-phone"></i> (508) 242-3083</p>
+                    <p><i class="fas fa-envelope"></i> jim@parkstreetbooks.com</p>
+                </div>
+                <div class="footer-hours">
+                    <h3>Hours</h3>
+                    <p>Monday - Saturday: 9am - 6pm</p>
+                    <p>Sunday: 10am - 5pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Park Street Books & Toys. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Park Street Books & Toys</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Additional styles specific to the shop page */
+        .page-header {
+            background-color: #eaf3ed;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .shop-intro {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .shop-container {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        
+        .shop-sidebar {
+            width: 250px;
+            flex-shrink: 0;
+        }
+        
+        .sidebar-section {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .sidebar-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .category-list {
+            list-style: none;
+        }
+        
+        .category-list li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .category-list li a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        .category-list li a:hover {
+            color: var(--primary);
+        }
+        
+        .category-list li a span {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .filter-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        
+        .filter-option input {
+            margin-right: 0.5rem;
+        }
+        
+        .shop-content {
+            flex-grow: 1;
+        }
+        
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .view-options {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .view-options button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+        
+        .view-options button:hover,
+        .view-options button.active {
+            background-color: var(--light-gray);
+            color: var(--primary);
+        }
+        
+        .sort-options {
+            display: flex;
+            align-items: center;
+        }
+        
+        .sort-options label {
+            margin-right: 0.5rem;
+            color: var(--gray);
+        }
+        
+        .sort-options select {
+            padding: 0.5rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .product-description {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .btn-add-cart {
+            flex-grow: 1;
+            text-align: center;
+            padding: 0.6rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-add-cart:hover {
+            background-color: #3c6349;
+            color: var(--white);
+        }
+        
+        .btn-wishlist {
+            margin-left: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: var(--light-gray);
+            color: var(--gray);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-wishlist:hover {
+            background-color: #ffecec;
+            color: #e74c3c;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+        
+        .pagination a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            margin: 0 0.25rem;
+            border-radius: 4px;
+            color: var(--dark);
+            background-color: var(--white);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .pagination a:hover,
+        .pagination a.active {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        @media (max-width: 992px) {
+            .shop-container {
+                flex-direction: column;
+            }
+            
+            .shop-sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-banner">
+            <p>New England's Largest Children's Book & Toy Store and Paint-Your-Own Pottery Place</p>
+        </div>
+        <div class="header-main">
+            <div class="logo">
+                <img src="images/parkStreetLogo.png" alt="Park Street Books & Toys Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="pottery.html">Pottery Place</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> Cart (0)</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Shop Our Collection</h1>
+            <div class="shop-intro">
+                <p>Browse our extensive selection of books, toys, games, puzzles, arts & crafts supplies, and more. Can't find what you're looking for? We offer special book orders with a 20% discount on new covers!</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container shop-container">
+            <aside class="shop-sidebar">
+                <div class="sidebar-section">
+                    <h3>Categories</h3>
+                    <ul class="category-list" id="books">
+                        <li><a href="#">Books <span>(120)</span></a></li>
+                        <li><a href="#">Audiobooks <span>(45)</span></a></li>
+                        <li><a href="#" id="puzzles">Puzzles <span>(75)</span></a></li>
+                        <li><a href="#" id="arts">Arts & Crafts <span>(95)</span></a></li>
+                        <li><a href="#" id="toys">Toys & Games <span>(150)</span></a></li>
+                        <li><a href="#" id="educational">Educational <span>(80)</span></a></li>
+                        <li><a href="#" id="crafts">Crafting Supplies <span>(60)</span></a></li>
+                        <li><a href="#">Pottery Kits <span>(25)</span></a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Price Range</h3>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="price-1" checked>
+                            <label for="price-1">Under $10</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="price-2" checked>
+                            <label for="price-2">$10 - $20</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="price-3" checked>
+                            <label for="price-3">$20 - $30</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="price-4" checked>
+                            <label for="price-4">$30 - $50</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="price-5" checked>
+                            <label for="price-5">Over $50</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Age Range</h3>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="age-1" checked>
+                            <label for="age-1">0-2 Years</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="age-2" checked>
+                            <label for="age-2">3-5 Years</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="age-3" checked>
+                            <label for="age-3">6-8 Years</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="age-4" checked>
+                            <label for="age-4">9-12 Years</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="age-5" checked>
+                            <label for="age-5">Teens</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="age-6" checked>
+                            <label for="age-6">Adults</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Availability</h3>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="availability-1" checked>
+                            <label for="availability-1">In Stock</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="availability-2">
+                            <label for="availability-2">Special Order</label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <div class="shop-content">
+                <div class="toolbar">
+                    <div class="view-options">
+                        <button class="active"><i class="fas fa-th-large"></i></button>
+                        <button><i class="fas fa-list"></i></button>
+                    </div>
+                    <div class="sort-options">
+                        <label for="sort">Sort by:</label>
+                        <select id="sort">
+                            <option>Featured</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest</option>
+                            <option>Best Selling</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/forReaders.png" alt="Journey Around Boston from A To Z">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Books</div>
+                            <h3 class="product-title">Journey Around Boston from A To Z</h3>
+                            <p class="product-description">Take a tour of Boston with this beautifully illustrated alphabet book.</p>
+                            <div class="product-price">$19.99</div>
+                            <div class="product-actions">
+                                <a href="#" class="btn-add-cart">Add to Cart</a>
+                                <a href="#" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/forPuzzlers.png" alt="Magnetic Puzzle Book (20 pcs)">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Puzzles</div>
+                            <h3 class="product-title">Magnetic Puzzle Book (20 pcs)</h3>
+                            <p class="product-description">A fun magnetic puzzle book with 20 pieces, perfect for travel.</p>
+                            <div class="product-price">$14.95</div>
+                            <div class="product-actions">
+                                <a href="#" class="btn-add-cart">Add to Cart</a>
+                                <a href="#" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="forCreators.jpg" alt="PicassoTiles Double-Sided Magnetic Drawing Board">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Arts & Crafts</div>
+                            <h3 class="product-title">PicassoTiles Double-Sided Magnetic Drawing Board</h3>
+                            <p class="product-description">Double-sided magnetic drawing board with alphabet letters and fun stencils.</p>
+                            <div class="product-price">$24.95</div>
+                            <div class="product-actions">
+                                <a href="#" class="btn-add-cart">Add to Cart</a>
+                                <a href="#" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="forLearners.jpg" alt="KidzRobotix Tyrannosaurus Rex Robot">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Toys</div>
+                            <h3 class="product-title">KidzRobotix Tyrannosaurus Rex Robot</h3>
+                            <p class="product-description">Build and program your own T-Rex robot. Great for STEM learning.</p>
+                            <div class="product-price">$21.95</div>
+                            <div class="product-actions">
+                                <a href="#" class="btn-add-cart">Add to Cart</a>
+                                <a href="#" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="forLearners.jpg" alt="KIDZLABS Solar System Planetarium">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Educational</div>
+                            <h3 class="product-title">KIDZLABS Solar System Planetarium</h3>
+                            <p class="product-description">Build your own solar system model and learn about planets.</p>
+                            <div class="product-price">$17.95</div>
+                            <div class="product-actions">
+                                <a href="#" class="btn-add-cart">Add to Cart</a>
+                                <a href="#" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="forCrafters.jpg" alt="Crazy Aaron's Thinking Putty">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Toys</div>
+                            <h3 class="product-title">Crazy Aaron's Thinking Putty</h3>
+                            <p class="product-description">Creative, non-toxic putty that stretches, bounces, and more!</p>
+                            <div class="product-price">$14.95</div>
+                            <div class="product-actions">
+                                <a href="#" class="btn-add-cart">Add to Cart</a>
+                                <a href="#" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="forLearners.jpg" alt="KidzLabs Volcano Making Kit">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Educational</div>
+                            <h3 class="product-title">KidzLabs Volcano Making Kit</h3>
+                            <p class="product-description">Create your own erupting volcano and learn about chemical reactions.</p>
+                            <div class="product-price">$18.95</div>
+                            <div class="product-actions">
+                                <a href="#" class="btn-add-cart">Add to Cart</a>
+                                <a href="#" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="forPuzzlers.jpg" alt="Stunt Planes">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Toys</div>
+                            <h3 class="product-title">Stunt Planes</h3>
+                            <p class="product-description">Set of aerodynamic stunt planes for outdoor play.</p>
+                            <div class="product-price">$32.95</div>
+                            <div class="product-actions">
+                                <a href="#" class="btn-add-cart">Add to Cart</a>
+                                <a href="#" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <a href="#"><i class="fas fa-chevron-left"></i></a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#"><i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="service-box">
+                <i class="fas fa-truck"></i>
+                <h3>Local Delivery</h3>
+                <p>To Medfield, Millis, Norfolk, Walpole, Dover, Sherborn and Westwood, MA on orders over $30</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-store"></i>
+                <h3>Curbside Pickup</h3>
+                <p>Available for ALL orders. Just give us a call when you arrive!</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-book"></i>
+                <h3>Special Book Orders</h3>
+                <p>Happy to help source your next great read, often at a 20% discount for new covers</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-phone"></i>
+                <h3>Customer Support</h3>
+                <p>Give us a call, (508) 242-3083, with any questions or concerns</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join Our Community</h2>
+            <p>Sign up for PSB news blasts, info on happenings and the occasional highlights of Jim James' shenanigans :)</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn-primary">Sign Up</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="parkStreetLogo.jpg" alt="Park Street Books & Toys Logo" class="footer-logo">
+                    <p>Park Street Books & Toys plus The Pottery Place 9am-6pm (Mon-Sat) and 10am-5pm (Sun)</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="pottery.html">Pottery Place</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 504 Main Street, Medfield, MA 02052</p>
+                    <p><i class="fas fa-phone"></i> (508) 242-3083</p>
+                    <p><i class="fas fa-envelope"></i> jim@parkstreetbooks.com</p>
+                </div>
+                <div class="footer-hours">
+                    <h3>Hours</h3>
+                    <p>Monday - Saturday: 9am - 6pm</p>
+                    <p>Sunday: 10am - 5pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Park Street Books & Toys. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

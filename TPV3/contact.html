@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - CS:GO Skins Market Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- jQuery for form validation -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- 
+    ===== jQuery Functions =====
+    1. Form Validation - Located in jquery-effects.js, provides real-time validation
+       for the contact form, ensuring all fields are properly completed.
+    2. Accordion - Located in jquery-effects.js, implements expandable/collapsible
+       sections for the FAQ content.
+    
+    ===== JavaScript Functions =====
+    1. Theme Switcher - Located in main.js, toggles between light and dark mode.
+    2. Mobile Navigation - Located in main.js, provides responsive menu for
+       mobile devices.
+    -->
+</head>
+<body>
+    <header>
+        <h1>Contact Me</h1>
+        <p class="subtitle">Get in touch about this CS:GO market analysis project</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html" id="nav-home">Home</a></li>
+            <li><a href="knife.html" id="nav-knife">Knife Skins</a></li>
+            <li><a href="rifle.html" id="nav-rifle">Rifle Collection</a></li>
+            <li><a href="pistol.html" id="nav-pistol">Pistol Marketplace</a></li>
+            <li><a href="smg.html" id="nav-smg">SMG Inventory</a></li>
+            <li><a href="sticker-investments.html" id="nav-sticker">Sticker Investments</a></li>
+            <li><a href="trading-platforms.html" id="nav-trading">Trading Platforms</a></li>
+            <li><a href="about.html" id="nav-about">About Me</a></li>
+            <li><a href="contact.html" id="nav-contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="container section">
+            <div class="grid">
+                <div class="col-6 col-md-12">
+                    <div class="card">
+                        <h2>Contact Information</h2>
+                        <img src="images/contact-image.jpeg" alt="CS:GO Skins Analysis Support Team" style="border-radius: 8px; margin-bottom: 1.5rem; width: 100%;">
+                        
+                        <p>Have questions about this website or my CS:GO skins project? Feel free to reach out!</p>
+                        
+                        <div class="contact-details">
+                            <p><strong>Name:</strong> Spencer Ernst</p>
+                            <p><strong>Email:</strong> sernst2@babson.edu</p>
+                            <p><strong>Phone:</strong> 216-926-6844</p>
+                            <p><strong>School:</strong> Babson College</p>
+                            <p><strong>Course:</strong> Web Technologies, Professor Eric Palson</p>
+                        </div>
+                        
+                        <h3>Office Hours</h3>
+                        <p>I'm available for virtual consultations about CS:GO skin investments during the following times:</p>
+                        <ul>
+                            <li>Monday: 3:00 PM - 5:00 PM EST</li>
+                            <li>Wednesday: 2:00 PM - 4:00 PM EST</li>
+                            <li>Friday: 1:00 PM - 3:00 PM EST</li>
+                        </ul>
+                        
+                        <p>For urgent inquiries, please include "URGENT" in your message subject line.</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-12">
+                    <div class="card">
+                        <h2>Send Me a Message</h2>
+                        <!-- Contact form with jQuery validation -->
+                        <form id="contact-form" action="#" method="post">
+                            <div class="form-group">
+                                <label for="name">Your Name:</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Your Email:</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email address">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject:</label>
+                                <select id="subject" name="subject">
+                                    <option value="">Please select a subject</option>
+                                    <option value="project-feedback">Project Feedback</option>
+                                    <option value="csgo-question">CS:GO Skins Question</option>
+                                    <option value="website-issue">Website Issue</option>
+                                    <option value="investment-advice">Investment Advice</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>What CS:GO skins are you interested in?</label>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="interests" value="knife"> Knife Skins
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests" value="rifle"> Rifle Skins
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests" value="pistol"> Pistol Skins
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests" value="smg"> SMG Skins
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>What about this project interests you?</label>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="project-interest" value="design"> Website Design
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="project-interest" value="csgo-content"> CS:GO Skin Content
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="project-interest" value="academic"> Academic Project
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Your Message:</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Enter your message here (minimum 20 characters)"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Section with Accordion - Uses jQuery -->
+            <div class="card">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="accordion">
+                    <div class="accordion-header">How accurate are your price estimates?</div>
+                    <div class="accordion-panel">
+                        <div class="accordion-content">
+                            <p>Our price estimates are based on current market data from multiple sources including Steam Community Market, Buff 163, and other third-party trading platforms. While we strive for accuracy, the CS:GO skin market is highly volatile and prices can fluctuate significantly.</p>
+                            <p>For high-value items, we recommend checking multiple sources before making investment decisions. Our estimates should be used as general guidelines rather than exact valuations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-header">How often is the market data updated?</div>
+                    <div class="accordion-panel">
+                        <div class="accordion-content">
+                            <p>Our market data is updated on a weekly basis to reflect current trends and price movements. For rapidly changing markets or during major events (game updates, operations, tournaments), we may provide more frequent updates.</p>
+                            <p>The "last updated" timestamp at the bottom of market analysis pages indicates when the information was last refreshed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-header">Do you offer personalized investment advice?</div>
+                    <div class="accordion-panel">
+                        <div class="accordion-content">
+                            <p>This website provides general market analysis and information for educational purposes. While we don't currently offer personalized investment consultations, you can contact us through the form above with specific questions.</p>
+                            <p>Remember that all investments carry risk, and the CS:GO skin market is particularly volatile. Never invest more than you can afford to lose.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-header">How do I get started with CS:GO skin trading?</div>
+                    <div class="accordion-panel">
+                        <div class="accordion-content">
+                            <p>Getting started with CS:GO skin trading involves several steps:</p>
+                            <ol>
+                                <li>Set up a Steam account and secure it with Steam Guard</li>
+                                <li>Learn about different skin types, wear values, and pricing factors</li>
+                                <li>Start with a modest budget to gain experience</li>
+                                <li>Familiarize yourself with reputable trading platforms</li>
+                                <li>Research market trends before making significant investments</li>
+                            </ol>
+                            <p>Check out our beginner's guide video on the homepage for more detailed information.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-header">Are CS:GO skin investments safe?</div>
+                    <div class="accordion-panel">
+                        <div class="accordion-content">
+                            <p>Like any investment, CS:GO skins carry inherent risks. Market values can fluctuate based on factors including game updates, player base changes, and external economic conditions.</p>
+                            <p>Key considerations for safety include:</p>
+                            <ul>
+                                <li>Only trade through official and reputable platforms</li>
+                                <li>Be wary of scams and phishing attempts</li>
+                                <li>Diversify your investments across different item types</li>
+                                <li>Stay informed about upcoming game changes</li>
+                                <li>Consider the potential impact of CS2 and future game developments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 CS:GO Skins Market Analysis. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About Me</a> | 
+                <a href="contact.html">Contact</a> | 
+                <a href="credits.html">Credits</a> | 
+                <a href="sitemap.html">Site Map</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Lightbox viewer -->
+    <div id="lightbox">
+        <div class="lightbox-content">
+          <span class="close-lightbox">&times;</span>
+          <img id="lightbox-image" src="" alt="">
+          <div id="lightbox-caption"></div>
+        </div>
+        </div>
+    
+    <!-- JavaScript files loaded last for optimal page loading -->
+    <script src="main.js"></script>
+    <script src="jquery-effects.js"></script>
+</body>
+</html>

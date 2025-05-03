@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS:GO Skins Market Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- jQuery for interactive effects -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- 
+    ===== jQuery Functions =====
+    1. Slideshow - Located in jquery-effects.js, handles the automatic image slideshow
+       with manual navigation controls for featured skins.
+    2. Gallery Lightbox - Located in jquery-effects.js, creates interactive image
+       viewer for the skin gallery.
+    3. Accordion - Located in jquery-effects.js, implements expandable/collapsible
+       sections for market info and FAQs.
+    4. Hover Effects - Located in jquery-effects.js, shows additional details when
+       hovering over skin cards.
+    
+    ===== JavaScript Functions =====
+    1. Theme Switcher - Located in main.js, toggles between light and dark mode.
+    2. Market Status - Located in main.js, uses conditional logic based on current
+       month to display different market status indicators.
+    3. Price Calculator - Located in main.js, implements conditional logic to
+       estimate skin prices based on various factors.
+    4. Mobile Navigation - Located in main.js, provides responsive menu for
+       mobile devices.
+    -->
+</head>
+<body>
+    <header>
+        <h1>CS:GO Skins Market Analysis</h1>
+        <p class="subtitle">Your guide to understanding the virtual weapon skin economy</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html" id="nav-home">Home</a></li>
+            <li><a href="knife.html" id="nav-knife">Knife Skins</a></li>
+            <li><a href="rifle.html" id="nav-rifle">Rifle Collection</a></li>
+            <li><a href="pistol.html" id="nav-pistol">Pistol Marketplace</a></li>
+            <li><a href="smg.html" id="nav-smg">SMG Inventory</a></li>
+            <li><a href="sticker-investments.html" id="nav-sticker">Sticker Investments</a></li>
+            <li><a href="trading-platforms.html" id="nav-trading">Trading Platforms</a></li>
+            <li><a href="about.html" id="nav-about">About Me</a></li>
+            <li><a href="contact.html" id="nav-contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="container section">
+            <h2 class="section-title">Market Overview</h2>
+            
+            <!-- Market Status Indicator - Uses conditional JavaScript -->
+            <div id="market-status" class="market-status">
+                <div class="status-icon">📊</div>
+                <div class="status-content">
+                    <p class="status-label">Current Market Health</p>
+                    <p class="status-value">Analyzing...</p>
+                    <p class="status-message">Loading market conditions...</p>
+                </div>
+            </div>
+            
+            <!-- Featured Skins Slideshow - Uses jQuery -->
+            <div class="slideshow">
+                <div class="slide">
+                    <img src="images/knife-fade.jpg" alt="Karambit Fade skin with colorful gradient pattern">
+                    <div class="slide-content">
+                        <h3>Karambit | Fade</h3>
+                        <p>One of the most iconic knife skins in CS:GO, featuring a gradient of yellow, pink, and purple.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/ak47-skin.jpg" alt="AK-47 Fire Serpent skin with dragon design">
+                    <div class="slide-content">
+                        <h3>AK-47 | Fire Serpent</h3>
+                        <p>A highly sought-after rifle skin from the Operation Bravo Collection.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/awp-skin.jpg" alt="AWP Dragon Lore skin with gold dragon artwork">
+                    <div class="slide-content">
+                        <h3>AWP | Dragon Lore</h3>
+                        <p>The legendary sniper rifle skin known for its rarity and prestige.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid">
+                <div class="col-8 col-md-12">
+                    <div class="card">
+                        <h3>Understanding CS:GO Skin Market</h3>
+                        <p>The CS:GO skin market represents a unique digital economy where virtual weapon skins can command significant real-world value. These cosmetic items vary in rarity, wear condition, and pattern, which directly influences their market price.</p>
+                        
+                        <p>Market trends show that rare knife skins and popular rifle skins, particularly for the AK-47 and M4A4, tend to maintain their value well over time. Factors such as professional player usage, tournament events, and game updates can significantly impact skin prices.</p>
+                        
+                        <!-- Accordion Implementation - Uses jQuery -->
+                        <div class="accordion">
+                            <div class="accordion-header">Factors Affecting Skin Prices</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <h4>Rarity Tiers</h4>
+                                    <ul>
+                                        <li>Consumer Grade (White)</li>
+                                        <li>Industrial Grade (Light Blue)</li>
+                                        <li>Mil-Spec (Blue)</li>
+                                        <li>Restricted (Purple)</li>
+                                        <li>Classified (Pink)</li>
+                                        <li>Covert (Red)</li>
+                                    </ul>
+                                    
+                                    <h4>Wear Conditions</h4>
+                                    <ul>
+                                        <li>Factory New (0.00-0.07)</li>
+                                        <li>Minimal Wear (0.07-0.15)</li>
+                                        <li>Field-Tested (0.15-0.38)</li>
+                                        <li>Well-Worn (0.38-0.45)</li>
+                                        <li>Battle-Scarred (0.45-1.00)</li>
+                                    </ul>
+                                    
+                                    <h4>Special Attributes</h4>
+                                    <ul>
+                                        <li>StatTrak™ Technology</li>
+                                        <li>Souvenir Status</li>
+                                        <li>Special Patterns</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-header">Market Trends & Cycles</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <p>The CS:GO skin market follows predictable seasonal patterns:</p>
+                                    <ul>
+                                        <li><strong>Winter (Nov-Feb):</strong> Higher prices due to increased player activity during holidays and cold weather months.</li>
+                                        <li><strong>Summer (Jun-Sep):</strong> Price dips as player counts decrease during vacation months.</li>
+                                        <li><strong>Major Tournaments:</strong> Temporary price increases, especially for items featured by professional players.</li>
+                                        <li><strong>Case Releases:</strong> New case releases typically cause short-term market volatility.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-header">Chinese Market Influence</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <p>Since gaining access to CS:GO in 2017, Chinese collectors have dramatically transformed the market:</p>
+                                    <ul>
+                                        <li>Driving price increases for rare items and collectibles</li>
+                                        <li>Shifting trading volume to platforms like Buff 163</li>
+                                        <li>Creating new valuation standards for pattern-based items</li>
+                                        <li>Establishing collection-focused rather than usage-focused ownership</li>
+                                        <li>Contributing to more sophisticated market analytics and pricing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-4 col-md-12">
+                    <!-- Price Calculator - Uses conditional JavaScript -->
+                    <div class="price-calculator">
+                        <h3>Skin Price Estimator</h3>
+                        <div class="calculator-form">
+                            <select id="skin-category">
+                                <option value="">Select Weapon Type</option>
+                                <option value="knife">Knife</option>
+                                <option value="rifle">Rifle</option>
+                                <option value="pistol">Pistol</option>
+                                <option value="smg">SMG</option>
+                            </select>
+                            
+                            <select id="skin-rarity">
+                                <option value="">Select Rarity</option>
+                                <option value="consumer">Consumer (White)</option>
+                                <option value="industrial">Industrial (Light Blue)</option>
+                                <option value="mil-spec">Mil-Spec (Blue)</option>
+                                <option value="restricted">Restricted (Purple)</option>
+                                <option value="classified">Classified (Pink)</option>
+                                <option value="covert">Covert (Red)</option>
+                            </select>
+                            
+                            <select id="skin-wear">
+                                <option value="">Select Wear</option>
+                                <option value="factory-new">Factory New</option>
+                                <option value="minimal-wear">Minimal Wear</option>
+                                <option value="field-tested">Field-Tested</option>
+                                <option value="well-worn">Well-Worn</option>
+                                <option value="battle-scarred">Battle-Scarred</option>
+                            </select>
+                            
+                            <button id="calculate-price">Calculate Price</button>
+                        </div>
+                        
+                        <div id="price-result"></div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Recent Market Updates</h3>
+                        <p>The CS2 transition has stabilized, with prices returning to more predictable patterns after initial volatility. Knife skins continue to hold their value well, while special pattern items reach new price heights.</p>
+                        
+                        <div style="margin-top: 1.5rem;">
+                            <h4>Explore Special Categories</h4>
+                            <div class="grid">
+                                <div class="col-6">
+                                    <a href="sticker-investments.html" class="btn btn-primary" style="display: block; text-align: center;">Sticker Investments</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="trading-platforms.html" class="btn btn-primary" style="display: block; text-align: center;">Trading Platforms</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Featured Skin Collection</h3>
+            
+            <!-- Skin Cards with Hover Effect - Uses JavaScript/jQuery -->
+            <div class="skin-cards">
+                <div class="skin-card">
+                    <div class="skin-card-img">
+                        <img src="images/knife.jpg" alt="Karambit Fade knife skin">
+                    </div>
+                    <div class="skin-card-content">
+                        <h4 class="skin-card-title">Karambit | Fade</h4>
+                        <p class="skin-card-price">$1,200 - $2,500</p>
+                        <div class="skin-card-details">
+                            <p>One of the most sought-after knife skins in CS:GO. Value depends heavily on fade percentage and pattern.</p>
+                            <p><span class="tag tag-blue">Premium</span> <span class="tag tag-purple">Collector</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skin-card">
+                    <div class="skin-card-img">
+                        <img src="images/awp-skin.jpg" alt="AWP Dragon Lore skin">
+                    </div>
+                    <div class="skin-card-content">
+                        <h4 class="skin-card-title">AWP | Dragon Lore</h4>
+                        <p class="skin-card-price">$3,000 - $15,000</p>
+                        <div class="skin-card-details">
+                            <p>The legendary Dragon Lore is the pinnacle of CS:GO skin collecting. Prices vary dramatically based on wear.</p>
+                            <p><span class="tag tag-red">Luxury</span> <span class="tag tag-purple">Collector</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skin-card">
+                    <div class="skin-card-img">
+                        <img src="images/ak47-skin.jpg" alt="AK-47 Fire Serpent skin">
+                    </div>
+                    <div class="skin-card-content">
+                        <h4 class="skin-card-title">AK-47 | Fire Serpent</h4>
+                        <p class="skin-card-price">$700 - $2,000</p>
+                        <div class="skin-card-details">
+                            <p>A premium rifle skin from Operation Bravo. Limited supply has driven steady price appreciation.</p>
+                            <p><span class="tag tag-blue">Premium</span> <span class="tag tag-green">Investment</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skin-card">
+                    <div class="skin-card-img">
+                        <img src="images/deagle-skin.jpg" alt="Desert Eagle Blaze skin">
+                    </div>
+                    <div class="skin-card-content">
+                        <h4 class="skin-card-title">Desert Eagle | Blaze</h4>
+                        <p class="skin-card-price">$400 - $800</p>
+                        <div class="skin-card-details">
+                            <p>A classic pistol skin from The Dust Collection. Popular for its clean design and limited availability.</p>
+                            <p><span class="tag tag-blue">Premium</span> <span class="tag tag-yellow">Stable</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Section -->
+            <div class="card">
+                <h3>CS:GO Skin Investment Guide</h3>
+                <video width="100%" height="auto" controls>
+                    <source src="video/market-guide.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>This comprehensive guide covers the basics of CS:GO skin investment strategies, market trends, and risk management techniques.</p>
+            </div>
+            
+            <!-- Gallery with Lightbox - Uses jQuery -->
+            <h3>Skin Gallery</h3>
+            <div class="gallery">
+                <div class="gallery-item" data-caption="Karambit | Doppler (Sapphire) - Ultra-rare blue gem pattern">
+                    <img src="images/knife-doppler.jpg" alt="Karambit Doppler Sapphire skin">
+                </div>
+                <div class="gallery-item" data-caption="AK-47 | Asiimov - Popular rifle skin with futuristic design">
+                    <img src="images/rifle-collection.jpg" alt="AK-47 Asiimov skin">
+                </div>
+                <div class="gallery-item" data-caption="AWP | Wildfire - Vibrant design with flame pattern">
+                    <img src="images/awp-skin.jpg" alt="AWP Wildfire skin">
+                </div>
+                <div class="gallery-item" data-caption="Butterfly Knife | Crimson Web - Highly sought-after pattern">
+                    <img src="images/knife-crimson-web.jpg" alt="Butterfly Knife Crimson Web skin">
+                </div>
+                <div class="gallery-item" data-caption="M4A4 | Howl - The only Contraband-rarity skin in CS:GO">
+                    <img src="images/m4-skin.jpg" alt="M4A4 Howl skin">
+                </div>
+                <div class="gallery-item" data-caption="Glock-18 | Fade - Classic gradient design from early cases">
+                    <img src="images/glock-skin.jpg" alt="Glock-18 Fade skin">
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 CS:GO Skins Market Analysis. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About Me</a> | 
+                <a href="contact.html">Contact</a> | 
+                <a href="credits.html">Credits</a> | 
+                <a href="sitemap.html">Site Map</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Lightbox viewer -->
+    <div id="lightbox">
+        <div class="lightbox-content">
+          <span class="close-lightbox">&times;</span>
+          <img id="lightbox-image" src="" alt="">
+          <div id="lightbox-caption"></div>
+        </div>
+        </div>
+    
+    <!-- JavaScript files loaded last for optimal page loading -->
+    <script src="main.js"></script>
+    <script src="jquery-effects.js"></script>
+</body>
+</html>

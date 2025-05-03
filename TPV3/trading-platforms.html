@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Platforms - CS:GO Skins Market Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- jQuery for interactive effects -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- 
+    ===== jQuery Functions =====
+    1. Accordion - Located in jquery-effects.js, implements expandable/collapsible
+       sections for platform details.
+    2. Gallery Lightbox - Located in jquery-effects.js, creates interactive image
+       viewer for platform screenshots.
+    3. Interactive Tables - Located in jquery-effects.js, provides sorting and
+       filtering for platform comparison.
+    
+    ===== JavaScript Functions =====
+    1. Theme Switcher - Located in main.js, toggles between light and dark mode.
+    2. Mobile Navigation - Located in main.js, provides responsive menu for
+       mobile devices.
+    3. Fee Calculator - Located in main.js, calculates platform fees based on
+       transaction values.
+    -->
+</head>
+<body>
+    <header>
+        <h1>Trading Platforms</h1>
+        <p class="subtitle">Comprehensive comparison of CS:GO skin marketplaces</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html" id="nav-home">Home</a></li>
+            <li><a href="knife.html" id="nav-knife">Knife Skins</a></li>
+            <li><a href="rifle.html" id="nav-rifle">Rifle Collection</a></li>
+            <li><a href="pistol.html" id="nav-pistol">Pistol Marketplace</a></li>
+            <li><a href="smg.html" id="nav-smg">SMG Inventory</a></li>
+            <li><a href="sticker-investments.html" id="nav-sticker">Sticker Investments</a></li>
+            <li><a href="trading-platforms.html" id="nav-trading">Trading Platforms</a></li>
+            <li><a href="about.html" id="nav-about">About Me</a></li>
+            <li><a href="contact.html" id="nav-contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="container section">
+            <div class="card">
+                <h2>CS:GO Skin Trading Platforms in 2025</h2>
+                <img src="images/tradingPlatform.png" alt="CS:GO Skin Trading Platforms Comparison" style="width: 100%; max-height: 400px; object-fit: cover; margin-bottom: 1.5rem; border-radius: 8px;">
+                
+                <p>The CS:GO skin trading ecosystem has evolved significantly since the game's launch, with numerous platforms now offering specialized services for buyers, sellers, and traders. Understanding the strengths, limitations, and fee structures of each platform is essential for maximizing value and ensuring security in your transactions.</p>
+                
+                <!-- Market Status Indicator - Shows trading platform market -->
+                <div class="market-status">
+                    <div class="status-icon">🔄</div>
+                    <div class="status-content">
+                        <p class="status-label">Trading Platform Landscape</p>
+                        <p class="status-value" style="color: #4CAF50;">EVOLVING</p>
+                        <p class="status-message">The trading platform market continues to develop with improvements in security, lower fees, and enhanced user experiences across major sites.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fee Calculator Tool - Uses JavaScript -->
+            <div class="card">
+                <h3>Trading Platform Fee Calculator</h3>
+                <p>Compare the actual amount you'll receive when selling items on different platforms:</p>
+                
+                <div class="calculator-form">
+                    <div>
+                        <label for="item-value">Item Value (USD):</label>
+                        <input type="number" id="item-value" min="1" max="100000" value="100">
+                    </div>
+                    
+                    <div>
+                        <label for="platform-select">Platform:</label>
+                        <select id="platform-select">
+                            <option value="steam">Steam Market</option>
+                            <option value="buff">Buff 163</option>
+                            <option value="skinbaron">SkinBaron</option>
+                            <option value="dmarket">DMarket</option>
+                            <option value="tradeit">Tradeit.gg</option>
+                            <option value="skinport">Skinport</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" id="calculate-fees">Calculate Fees</button>
+                </div>
+                
+                <div id="fee-result"></div>
+                
+                <script>
+                    // Fee calculation function
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.getElementById('calculate-fees').addEventListener('click', calculateFees);
+                    });
+                    
+                    function calculateFees() {
+                        const itemValue = parseFloat(document.getElementById('item-value').value);
+                        const platform = document.getElementById('platform-select').value;
+                        
+                        let fee = 0;
+                        let feeName = '';
+                        
+                        // Fee structures based on platform
+                        switch(platform) {
+                            case 'steam':
+                                fee = 0.15; // 15% total fee (13% + 2% valve)
+                                feeName = 'Steam Market';
+                                break;
+                            case 'buff':
+                                fee = 0.025; // 2.5% fee
+                                feeName = 'Buff 163';
+                                break;
+                            case 'skinbaron':
+                                fee = 0.02; // 2% fee
+                                feeName = 'SkinBaron';
+                                break;
+                            case 'dmarket':
+                                fee = 0.07; // Up to 7% fee
+                                feeName = 'DMarket';
+                                break;
+                            case 'tradeit':
+                                fee = 0.03; // 3% fee
+                                feeName = 'Tradeit.gg';
+                                break;
+                            case 'skinport':
+                                fee = 0.06; // 6% fee (varies by item)
+                                feeName = 'Skinport';
+                                break;
+                        }
+                        
+                        const feeAmount = itemValue * fee;
+                        const netAmount = itemValue - feeAmount;
+                        
+                        // Determine price class based on fee percentage
+                        let feeClass = 'medium-value';
+                        if (fee <= 0.03) {
+                            feeClass = 'low-value';
+                        } else if (fee >= 0.1) {
+                            feeClass = 'high-value';
+                        }
+                        
+                        // Display the result
+                        const resultBox = document.getElementById('fee-result');
+                        resultBox.innerHTML = `
+                            <div class="price-result-inner">
+                                <h4>Selling on ${feeName}:</h4>
+                                <p>Item Value: <span>$${itemValue.toFixed(2)}</span></p>
+                                <p>Platform Fee: <span class="${feeClass}">${(fee * 100).toFixed(1)}% ($${feeAmount.toFixed(2)})</span></p>
+                                <p>You Receive: <span class="price">$${netAmount.toFixed(2)}</span></p>
+                                <p class="recommendation">Using ${feeName} for this transaction means you ${fee <= 0.05 ? 'keep more of your money compared to most platforms' : 'might want to consider alternatives with lower fees'}.</p>
+                            </div>
+                        `;
+                    }
+                </script>
+            </div>
+            
+            <h2 class="section-title">Top Trading Platforms Comparison</h2>
+            
+            <div class="grid">
+                <div class="col-6 col-md-12">
+                    <div class="card">
+                        <h3>Steam Community Market</h3>
+                        <div class="market-status" style="margin-bottom: 1.5rem;">
+                            <div class="status-content">
+                                <p class="status-label">Fee Structure</p>
+                                <p class="status-value" style="color: #F44336;">HIGH (15%)</p>
+                                <p class="status-message">5% base fee + 10% CS:GO fee</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-header">Platform Overview</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <p>The Steam Community Market is Valve's official marketplace for trading CS:GO skins and other in-game items. As the original and most widely used platform, it offers unmatched security and integration with the game client.</p>
+                                    
+                                    <div class="grid">
+                                        <div class="col-6">
+                                            <h4>Strengths</h4>
+                                            <ul>
+                                                <li>Direct integration with Steam accounts</li>
+                                                <li>Maximum security (no external site risks)</li>
+                                                <li>Immediate delivery of items</li>
+                                                <li>High liquidity for common items</li>
+                                                <li>No risk of scams or fraud</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="col-6">
+                                            <h4>Limitations</h4>
+                                            <ul>
+                                                <li>Highest fees in the market (15%)</li>
+                                                <li>$1,800 price cap for most items</li>
+                                                <li>7-day trade hold on purchased items</li>
+                                                <li>Steam Wallet funds only (no cash-out)</li>
+                                                <li>Limited search and filter options</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-header">Best For</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>New traders prioritizing security</li>
+                                        <li>Quick sales of common items</li>
+                                        <li>Buyers planning to keep items (not trade)</li>
+                                        <li>Traders staying within the Steam ecosystem</li>
+                                        <li>Small to medium-value transactions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-12">
+                    <div class="card">
+                        <h3>Buff 163</h3>
+                        <div class="market-status" style="margin-bottom: 1.5rem;">
+                            <div class="status-content">
+                                <p class="status-label">Fee Structure</p>
+                                <p class="status-value" style="color: #4CAF50;">LOW (2.5%)</p>
+                                <p class="status-message">2.5% seller fee, no buyer fee</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-header">Platform Overview</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <p>Buff 163 has emerged as the dominant CS:GO marketplace, particularly for high-value items. Originally a Chinese platform, it has become the global standard for skin pricing and rare item trading.</p>
+                                    
+                                    <div class="grid">
+                                        <div class="col-6">
+                                            <h4>Strengths</h4>
+                                            <ul>
+                                                <li>Low 2.5% fee structure</li>
+                                                <li>Highest volume of high-tier items</li>
+                                                <li>Industry standard for price references</li>
+                                                <li>Detailed filter and search options</li>
+                                                <li>Pattern and float value search tools</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="col-6">
+                                            <h4>Limitations</h4>
+                                            <ul>
+                                                <li>Chinese platform (language barrier)</li>
+                                                <li>Requires Chinese ID for full access</li>
+                                                <li>Complex setup for international users</li>
+                                                <li>Limited payment methods for non-Chinese</li>
+                                                <li>Customer support primarily in Chinese</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-header">Best For</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Experienced traders seeking best prices</li>
+                                        <li>Collectors looking for rare patterns</li>
+                                        <li>High-value item transactions</li>
+                                        <li>Price checking and market research</li>
+                                        <li>Chinese users with full platform access</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid">
+                <div class="col-4 col-sm-12">
+                    <div class="card">
+                        <h3>SkinBaron</h3>
+                        <div class="market-status" style="margin-bottom: 1.5rem;">
+                            <div class="status-content">
+                                <p class="status-label">Fee Structure</p>
+                                <p class="status-value" style="color: #4CAF50;">LOW (2%)</p>
+                                <p class="status-message">2% seller fee for regular users</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-header">Key Features</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>European-based marketplace (Germany)</li>
+                                        <li>Strong regulatory compliance</li>
+                                        <li>Multiple cash-out options</li>
+                                        <li>Excellent for European users</li>
+                                        <li>Clean, user-friendly interface</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-4 col-sm-12">
+                    <div class="card">
+                        <h3>DMarket</h3>
+                        <div class="market-status" style="margin-bottom: 1.5rem;">
+                            <div class="status-content">
+                                <p class="status-label">Fee Structure</p>
+                                <p class="status-value" style="color: #FF9800;">MEDIUM (7%)</p>
+                                <p class="status-message">Up to 7% fee depending on item</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-header">Key Features</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Cross-game trading platform</li>
+                                        <li>Cryptocurrency payment options</li>
+                                        <li>Mobile app availability</li>
+                                        <li>Bidding system for non-listed items</li>
+                                        <li>Various promotion and discount options</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-4 col-sm-12">
+                    <div class="card">
+                        <h3>Tradeit.gg</h3>
+                        <div class="market-status" style="margin-bottom: 1.5rem;">
+                            <div class="status-content">
+                                <p class="status-label">Fee Structure</p>
+                                <p class="status-value" style="color: #4CAF50;">LOW (3%)</p>
+                                <p class="status-message">3% seller fee on transactions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-header">Key Features</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Bot-powered trading system</li>
+                                        <li>Instant trades and transactions</li>
+                                        <li>Lower fees than traditional marketplaces</li>
+                                        <li>Regular giveaways and promotions</li>
+                                        <li>Comprehensive user support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Platform Security Considerations</h3>
+                
+                <p>Security is paramount when trading valuable CS:GO items. Here's what to consider when choosing a platform:</p>
+                
+                <div class="grid">
+                    <div class="col-6 col-md-12">
+                        <h4>Security Best Practices</h4>
+                        <ul>
+                            <li><strong>Two-Factor Authentication:</strong> Always enable Steam Guard and 2FA on trading platforms</li>
+                            <li><strong>API Key Management:</strong> Regularly check and reset your Steam API key</li>
+                            <li><strong>Trade URL Protection:</strong> Never share your trade URL publicly</li>
+                            <li><strong>Verification Checks:</strong> Verify all trade offers before accepting</li>
+                            <li><strong>Site Legitimacy:</strong> Only use established platforms with proven track records</li>
+                            <li><strong>Phishing Awareness:</strong> Be wary of fake login pages and impersonation attempts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-6 col-md-12">
+                        <h4>Notable Security Incidents</h4>
+                        <ul>
+                            <li><strong>CS.Money Hack (2022):</strong> Major trading platform suffered a security breach</li>
+                            <li><strong>OPSkins Shutdown (2018):</strong> Valve banned the popular marketplace for TOS violations</li>
+                            <li><strong>API Scams (2018-Present):</strong> Ongoing attempts to hijack accounts via API keys</li>
+                            <li><strong>Gambling Site Scams (2016):</strong> Numerous unregulated gambling sites disappeared with user funds</li>
+                            <li><strong>YouTuber Inventory Thefts:</strong> High-profile inventory thefts targeting content creators</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Comprehensive Fee Comparison</h3>
+                
+                <div class="table-responsive">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Seller Fee</th>
+                                <th>Buyer Fee</th>
+                                <th>Cash-Out Options</th>
+                                <th>Minimum Withdrawal</th>
+                                <th>Trade Hold</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Steam Market</td>
+                                <td>15%</td>
+                                <td>None</td>
+                                <td>None (Steam Wallet only)</td>
+                                <td>N/A</td>
+                                <td>7 days</td>
+                            </tr>
+                            <tr>
+                                <td>Buff 163</td>
+                                <td>2.5%</td>
+                                <td>None</td>
+                                <td>Alipay, WeChat Pay, Bank Transfer (CN)</td>
+                                <td>$5 (¥30)</td>
+                                <td>None*</td>
+                            </tr>
+                            <tr>
+                                <td>SkinBaron</td>
+                                <td>2% (reg), 1% (premium)</td>
+                                <td>None</td>
+                                <td>Bank Transfer, PayPal, G2A Pay</td>
+                                <td>$10 (€10)</td>
+                                <td>None*</td>
+                            </tr>
+                            <tr>
+                                <td>DMarket</td>
+                                <td>5-7%</td>
+                                <td>None</td>
+                                <td>Bank Card, PayPal, Crypto</td>
+                                <td>$10</td>
+                                <td>None*</td>
+                            </tr>
+                            <tr>
+                                <td>Tradeit.gg</td>
+                                <td>3%</td>
+                                <td>None</td>
+                                <td>Bank Transfer, Crypto</td>
+                                <td>$5</td>
+                                <td>None*</td>
+                            </tr>
+                            <tr>
+                                <td>Skinport</td>
+                                <td>6-12% (value dependent)</td>
+                                <td>None</td>
+                                <td>Bank Transfer, PayPal, Crypto</td>
+                                <td>$5 (€5)</td>
+                                <td>None*</td>
+                            </tr>
+                            <tr>
+                                <td>SkinCashier</td>
+                                <td>5-10% (value dependent)</td>
+                                <td>None</td>
+                                <td>Bank Transfer, PayPal, Crypto</td>
+                                <td>$5</td>
+                                <td>None*</td>
+                            </tr>
+                            <tr>
+                                <td>Skinswap</td>
+                                <td>3%</td>
+                                <td>None</td>
+                                <td>Bank Transfer, PayPal, Crypto</td>
+                                <td>$10</td>
+                                <td>None*</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="small-text">* Items still subject to Steam's 7-day trade hold if coming from a new device or without Steam Guard.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Platform Selection Strategy</h3>
+                
+                <p>The best platform for your needs depends on your specific trading goals and circumstances:</p>
+                
+                <div class="grid">
+                    <div class="col-4 col-sm-12">
+                        <div class="card">
+                            <h4>For Casual Traders</h4>
+                            <p><strong>Best Platform:</strong> Steam Market</p>
+                            <p><strong>Why:</strong> Maximum security and simplicity, despite higher fees.</p>
+                            <ul>
+                                <li>No complicated setup required</li>
+                                <li>Direct integration with game</li>
+                                <li>No risk of scams or fraud</li>
+                                <li>Good for smaller transactions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-4 col-sm-12">
+                        <div class="card">
+                            <h4>For Serious Investors</h4>
+                            <p><strong>Best Platform:</strong> Buff 163</p>
+                            <p><strong>Why:</strong> Largest marketplace with the best prices for high-value items.</p>
+                            <ul>
+                                <li>Industry standard pricing</li>
+                                <li>Largest selection of rare items</li>
+                                <li>Advanced pattern/float filters</li>
+                                <li>High liquidity for expensive items</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-4 col-sm-12">
+                        <div class="card">
+                            <h4>For Cash-Out Needs</h4>
+                            <p><strong>Best Platform:</strong> SkinBaron/Skinport</p>
+                            <p><strong>Why:</strong> Reliable cash-out options with good security.</p>
+                            <ul>
+                                <li>Multiple withdrawal methods</li>
+                                <li>Strong regulatory compliance</li>
+                                <li>Reasonable fees</li>
+                                <li>Established reputation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery with Lightbox - Uses jQuery -->
+            <h3>Platform Interface Gallery</h3>
+            <div class="gallery">
+                <div class="gallery-item" data-caption="Steam Community Market - The original and most secure trading platform">
+                    <img src="images/steamMarket.png" alt="Steam Market Interface">
+                </div>
+                <div class="gallery-item" data-caption="Buff 163 - The leading marketplace for high-value items">
+                    <img src="images/buff.png" alt="Buff 163 Interface">
+                </div>
+                <div class="gallery-item" data-caption="SkinBaron - European-focused marketplace with low fees">
+                    <img src="images/skinbaron.png" alt="SkinBaron Interface">
+                </div>
+                <div class="gallery-item" data-caption="DMarket - Multi-game trading platform with cryptocurrency options">
+                    <img src="images/dmarket.png" alt="DMarket Interface">
+                </div>
+                <div class="gallery-item" data-caption="Tradeit.gg - Bot-powered trading platform for instant exchanges">
+                    <img src="images/tradeit.png" alt="Tradeit.gg Interface">
+                </div>
+                <div class="gallery-item" data-caption="Skinport - Feature-rich platform with excellent user experience">
+                    <img src="images/skinportInterface.png" alt="Skinport Interface">
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 CS:GO Skins Market Analysis. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About Me</a> | 
+                <a href="contact.html">Contact</a> | 
+                <a href="credits.html">Credits</a> | 
+                <a href="sitemap.html">Site Map</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Lightbox viewer -->
+    <div id="lightbox">
+        <div class="lightbox-content">
+          <span class="close-lightbox">&times;</span>
+          <img id="lightbox-image" src="" alt="">
+          <div id="lightbox-caption"></div>
+        </div>
+        </div>
+    
+    <!-- JavaScript files loaded last for optimal page loading -->
+    <script src="main.js"></script>
+    <script src="jquery-effects.js"></script>
+</body>
+</html>

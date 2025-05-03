@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - CS:GO Skins Market Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- jQuery for interactive effects -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- 
+    ===== jQuery Functions =====
+    1. Accordion - Located in jquery-effects.js, implements expandable/collapsible
+       sections for project approach and methodology information.
+    
+    ===== JavaScript Functions =====
+    1. Theme Switcher - Located in main.js, toggles between light and dark mode.
+    2. Mobile Navigation - Located in main.js, provides responsive menu for
+       mobile devices.
+    -->
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+        <p class="subtitle">The creator behind this CS:GO market analysis site</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html" id="nav-home">Home</a></li>
+            <li><a href="knife.html" id="nav-knife">Knife Skins</a></li>
+            <li><a href="rifle.html" id="nav-rifle">Rifle Collection</a></li>
+            <li><a href="pistol.html" id="nav-pistol">Pistol Marketplace</a></li>
+            <li><a href="smg.html" id="nav-smg">SMG Inventory</a></li>
+            <li><a href="sticker-investments.html" id="nav-sticker">Sticker Investments</a></li>
+            <li><a href="trading-platforms.html" id="nav-trading">Trading Platforms</a></li>
+            <li><a href="about.html" id="nav-about">About Me</a></li>
+            <li><a href="contact.html" id="nav-contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="container section">
+            <div class="grid">
+                <div class="col-4 col-md-12">
+                    <div class="card text-center">
+                        <img src="images/spencer-photo.png" alt="Photo of Spencer Ernst, creator of CS:GO Skins Market Analysis" style="max-width: 250px; border-radius: 8px; margin: 0 auto 1.5rem;">
+                        
+                        <h2>Spencer Ernst</h2>
+                        <p>Junior at Babson College</p>
+                        <p>Web Technologies Student</p>
+                        <p>Future Morgan Stanley Analyst</p>
+                        
+                        <div style="margin-top: 1.5rem;">
+                            <p><strong>Education:</strong> Babson College, Class of 2026</p>
+                            <p><strong>Major:</strong> Finance with Concentration in Business Analytics</p>
+                            <p><strong>Course:</strong> Web Technologies, Professor Eric Palson</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-8 col-md-12">
+                    <div class="card">
+                        <h2>Project Background</h2>
+                        <p>This CS:GO Skins Market Analysis website was created as part of my Web Technologies course at Babson College. As someone interested in both web development and virtual economies, I chose to focus on the fascinating digital marketplace of CS:GO skins.</p>
+                        
+                        <p>The Counter-Strike skin market represents a unique intersection of gaming culture, digital art, and investment economics. Through this project, I'm exploring how to present market data and analysis in an accessible, user-friendly format while practicing essential web development skills.</p>
+                        
+                        <div class="accordion">
+                            <div class="accordion-header">Project Objectives</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <p>This project was developed with the following objectives:</p>
+                                    <ol>
+                                        <li>Create a comprehensive resource for understanding the CS:GO skins market</li>
+                                        <li>Apply and demonstrate proficiency in HTML, CSS, JavaScript, and jQuery</li>
+                                        <li>Implement responsive design principles for cross-device compatibility</li>
+                                        <li>Develop interactive elements that enhance user experience</li>
+                                        <li>Organize and present complex market data in an accessible format</li>
+                                        <li>Explore the intersection of virtual economies and traditional investment principles</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-header">My Approach to CS:GO Skins</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <h4>Market Research</h4>
+                                    <ul>
+                                        <li>Analyzing historical price trends from 2013 to present</li>
+                                        <li>Identifying valuable investment opportunities based on supply constraints</li>
+                                        <li>Understanding rarity factors including pattern indexes and float values</li>
+                                        <li>Monitoring the impact of game updates and market changes</li>
+                                        <li>Studying the influence of Chinese collectors on the high-end market</li>
+                                    </ul>
+                                    
+                                    <h4>Website Development</h4>
+                                    <ul>
+                                        <li>Creating an intuitive navigation structure organized by weapon categories</li>
+                                        <li>Designing a clean, focused user interface with both light and dark modes</li>
+                                        <li>Implementing responsive design for optimal viewing on all devices</li>
+                                        <li>Adding interactive elements to improve data visualization and user engagement</li>
+                                        <li>Ensuring proper front-end validation for user inputs</li>
+                                    </ul>
+                                    
+                                    <h4>Data Presentation</h4>
+                                    <ul>
+                                        <li>Categorizing skins by weapon type for logical organization</li>
+                                        <li>Highlighting key price factors including rarity, wear, and pattern</li>
+                                        <li>Creating price estimators based on comprehensive market data</li>
+                                        <li>Developing visual guides to pattern variations and their impact on value</li>
+                                        <li>Providing market context through educational resources and explanations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-header">Technical Implementation</div>
+                            <div class="accordion-panel">
+                                <div class="accordion-content">
+                                    <h4>Front-End Technologies Used</h4>
+                                    <ul>
+                                        <li><strong>HTML5:</strong> Semantic markup for content structure</li>
+                                        <li><strong>CSS3:</strong> Responsive design with media queries</li>
+                                        <li><strong>JavaScript:</strong> Interactive elements and conditional logic</li>
+                                        <li><strong>jQuery:</strong> Enhanced user interface components and effects</li>
+                                    </ul>
+                                    
+                                    <h4>Key Features</h4>
+                                    <ul>
+                                        <li><strong>Dark/Light Theme:</strong> User-selectable color theme with localStorage persistence</li>
+                                        <li><strong>Responsive Design:</strong> Mobile-first approach with breakpoints for all devices</li>
+                                        <li><strong>Form Validation:</strong> Real-time feedback for user inputs</li>
+                                        <li><strong>Interactive Gallery:</strong> Lightbox implementation for detailed skin viewing</li>
+                                        <li><strong>Accordions:</strong> Collapsible content sections for better information organization</li>
+                                        <li><strong>Price Calculator:</strong> Conditional logic for skin value estimation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Personal Interest</h2>
+                        <p>My interest in the CS:GO skins market stems from its unique position at the intersection of gaming, economics, and digital collectibles. As someone preparing for a career in finance, I find virtual economies fascinating as case studies of market behavior, price discovery, and investment psychology.</p>
+                        
+                        <p>The CS:GO market specifically offers interesting insights into:</p>
+                        <ul>
+                            <li>Supply and demand mechanics in digital economies</li>
+                            <li>The psychology of collectible valuation</li>
+                            <li>Market responses to external events</li>
+                            <li>Long-term investment patterns in virtual goods</li>
+                            <li>The influence of community perception on pricing</li>
+                        </ul>
+                        
+                        <p>This project has allowed me to combine my analytical interests with practical web development skills, creating a resource that I hope will be informative for both CS:GO enthusiasts and those interested in virtual economies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 CS:GO Skins Market Analysis. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About Me</a> | 
+                <a href="contact.html">Contact</a> | 
+                <a href="credits.html">Credits</a> | 
+                <a href="sitemap.html">Site Map</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Lightbox viewer -->
+    <div id="lightbox">
+    <div class="lightbox-content">
+      <span class="close-lightbox">&times;</span>
+      <img id="lightbox-image" src="" alt="">
+      <div id="lightbox-caption"></div>
+    </div>
+    </div>
+    
+    <!-- JavaScript files loaded last for optimal page loading -->
+    <script src="main.js"></script>
+    <script src="jquery-effects.js"></script>
+</body>
+</html>

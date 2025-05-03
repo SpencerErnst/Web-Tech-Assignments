@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knife Skins - CS:GO Skins Market Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- jQuery for interactive effects -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- 
+    ===== jQuery Functions =====
+    1. Sticker Hover Effect - Located in jquery-effects.js, shows additional details
+       when hovering over pattern items.
+    2. Gallery Lightbox - Located in jquery-effects.js, creates interactive image
+       viewer for knife pattern gallery.
+    3. Accordion - Located in jquery-effects.js, implements expandable/collapsible
+       sections for knife types and market info.
+    
+    ===== JavaScript Functions =====
+    1. Theme Switcher - Located in main.js, toggles between light and dark mode.
+    2. Mobile Navigation - Located in main.js, provides responsive menu for
+       mobile devices.
+    3. Hover Effects - Located in main.js, shows additional knife details on hover.
+    -->
+</head>
+<body>
+    <header>
+        <h1>Knife Skins</h1>
+        <p class="subtitle">Premium blade collections and market insights</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html" id="nav-home">Home</a></li>
+            <li><a href="knife.html" id="nav-knife">Knife Skins</a></li>
+            <li><a href="rifle.html" id="nav-rifle">Rifle Collection</a></li>
+            <li><a href="pistol.html" id="nav-pistol">Pistol Marketplace</a></li>
+            <li><a href="smg.html" id="nav-smg">SMG Inventory</a></li>
+            <li><a href="sticker-investments.html" id="nav-sticker">Sticker Investments</a></li>
+            <li><a href="trading-platforms.html" id="nav-trading">Trading Platforms</a></li>
+            <li><a href="about.html" id="nav-about">About Me</a></li>
+            <li><a href="contact.html" id="nav-contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="container section">
+            <div class="card">
+                <h2>Premium Knife Collections</h2>
+                <img src="images/knife-collection.jpg" alt="Collection of premium CS:GO knife types including Karambit, Butterfly, and Bayonet" class="featured-image" style="max-height: 400px; width: 100%; object-fit: cover;">
+                
+                <p>Knife skins represent the pinnacle of CS:GO collectibles, often commanding the highest prices in the market. Their rarity, visual appeal, and status symbol nature make them prized possessions among players and investors alike.</p>
+                
+                <!-- Accordion for Knife Types - Uses jQuery -->
+                <div class="accordion">
+                    <div class="accordion-header">Popular Knife Types</div>
+                    <div class="accordion-panel">
+                        <div class="accordion-content">
+                            <div class="grid">
+                                <div class="col-6 col-sm-12">
+                                    <h4>Karambit</h4>
+                                    <ul>
+                                        <li>Distinctive curved blade inspired by tiger claws</li>
+                                        <li>Among the most sought-after knife designs</li>
+                                        <li>Popular patterns: Fade, Doppler, Crimson Web</li>
+                                        <li>Price heavily influenced by "corner" quality</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="col-6 col-sm-12">
+                                    <h4>Butterfly Knife</h4>
+                                    <ul>
+                                        <li>Known for unique flipping animation</li>
+                                        <li>High demand due to visual appeal</li>
+                                        <li>Popular patterns: Fade, Marble Fade, Slaughter</li>
+                                        <li>Value affected by "spine" quality</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="col-6 col-sm-12">
+                                    <h4>M9 Bayonet</h4>
+                                    <ul>
+                                        <li>Large blade with tactical design</li>
+                                        <li>Distinctive serrated back edge</li>
+                                        <li>Popular patterns: Crimson Web, Doppler Phase 2, Lore</li>
+                                        <li>Hole pattern affects Crimson Web pricing</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="col-6 col-sm-12">
+                                    <h4>Classic Knife</h4>
+                                    <ul>
+                                        <li>Original Counter-Strike knife design</li>
+                                        <li>Nostalgic value for long-time players</li>
+                                        <li>Popular patterns: Fade, Slaughter, Crimson Web</li>
+                                        <li>Added in the CS20 Case (2019)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-header">Knife Pattern Pricing Factors</div>
+                    <div class="accordion-panel">
+                        <div class="accordion-content">
+                            <p>Knife skin prices are heavily influenced by pattern variations, with certain attributes commanding significant premiums:</p>
+                            
+                            <h4>Fade Patterns</h4>
+                            <ul>
+                                <li><strong>Full Fade:</strong> Contains maximum possible color saturation (90-100%)</li>
+                                <li><strong>True 100% Fade:</strong> Displays the complete color spectrum with purple extending to the hilt</li>
+                                <li><strong>Fake 90/95% Fade:</strong> Has less purple coverage than full fades</li>
+                                <li>Price difference: Up to 40% premium for true 100% fades</li>
+                            </ul>
+                            
+                            <h4>Doppler Phases</h4>
+                            <ul>
+                                <li><strong>Phase 1:</strong> Black with pink accents</li>
+                                <li><strong>Phase 2:</strong> Pink-dominant pattern (most valuable standard phase)</li>
+                                <li><strong>Phase 3:</strong> Green/dark pattern (least valuable)</li>
+                                <li><strong>Phase 4:</strong> Blue-dominant pattern</li>
+                                <li><strong>Ruby:</strong> Solid red/pink pattern (extremely rare)</li>
+                                <li><strong>Sapphire:</strong> Solid blue pattern (extremely rare)</li>
+                                <li><strong>Black Pearl:</strong> Dark iridescent pattern (rarest)</li>
+                                <li>Price difference: Special patterns (Ruby/Sapphire/Black Pearl) can be 5-10x more expensive than standard phases</li>
+                            </ul>
+                            
+                            <h4>Crimson Web Patterns</h4>
+                            <ul>
+                                <li><strong>Web Placement:</strong> Center webs are most valuable</li>
+                                <li><strong>Web Count:</strong> More webs = higher value</li>
+                                <li><strong>Web Size:</strong> Larger webs command premium prices</li>
+                                <li>Price difference: Perfect web patterns can add 25-50% to value</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Top Knife Finishes</h2>
+            
+            <!-- Skin Cards with Hover Effect - Uses JavaScript -->
+            <div class="skin-cards">
+                <div class="skin-card">
+                    <div class="skin-card-img">
+                        <img src="images/knife-fade.jpg" alt="Karambit Fade with red, pink and purple gradient">
+                    </div>
+                    <div class="skin-card-content">
+                        <h4 class="skin-card-title">Fade</h4>
+                        <p class="skin-card-price">$600 - $2,500+</p>
+                        <div class="skin-card-details">
+                            <p>The Fade finish features a gradient blend of colors, typically yellow at the handle transitioning to pink and purple at the tip. Full fades with high purple percentage command premium prices.</p>
+                            <p><span class="tag tag-blue">Premium</span> <span class="tag tag-purple">Pattern-Based</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skin-card">
+                    <div class="skin-card-img">
+                        <img src="images/knife-doppler.jpg" alt="M9 Bayonet Doppler with deep blue and black patterns">
+                    </div>
+                    <div class="skin-card-content">
+                        <h4 class="skin-card-title">Doppler</h4>
+                        <p class="skin-card-price">$400 - $5,000+</p>
+                        <div class="skin-card-details">
+                            <p>Doppler finishes feature swirling patterns of color on a dark base. Special phases like Sapphire (blue), Ruby (red), and Black Pearl (dark iridescent) are extremely rare and valuable.</p>
+                            <p><span class="tag tag-red">Luxury</span> <span class="tag tag-purple">Pattern-Based</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skin-card">
+                    <div class="skin-card-img">
+                        <img src="images/knife-crimson-web.jpg" alt="Butterfly Knife Crimson Web with red base and black web patterns">
+                    </div>
+                    <div class="skin-card-content">
+                        <h4 class="skin-card-title">Crimson Web</h4>
+                        <p class="skin-card-price">$300 - $10,000+</p>
+                        <div class="skin-card-details">
+                            <p>Featuring a deep red base with black web patterns, these knives vary in value based on the number and placement of web formations. Factory New versions are extremely rare.</p>
+                            <p><span class="tag tag-red">Luxury</span> <span class="tag tag-yellow">Collector</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skin-card">
+                    <div class="skin-card-img">
+                        <img src="images/knife" alt="Butterfly Knife Case Hardened with blue pattern">
+                    </div>
+                    <div class="skin-card-content">
+                        <h4 class="skin-card-title">Case Hardened</h4>
+                        <p class="skin-card-price">$200 - $100,000+</p>
+                        <div class="skin-card-details">
+                            <p>Case Hardened patterns feature unique blue, gold, and purple patterns. The extremely rare "blue gem" patterns with high blue percentages can command extraordinary prices.</p>
+                            <p><span class="tag tag-red">Ultra-Luxury</span> <span class="tag tag-purple">Pattern-Based</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sticker-style Pattern Display - Uses jQuery hover effects -->
+            <div class="card">
+                <h3>Case Hardened Patterns</h3>
+                <p>Case Hardened knives are valued based on their pattern index, which determines the distribution of blue, gold, and purple coloration. Here are some notable patterns:</p>
+                
+                <div class="sticker-container">
+                    <div class="sticker-item" data-pattern="387">
+                        <img src="images/blueGemRarePattern.jpg" alt="Case Hardened Pattern #387" class="sticker-img">
+                        <p class="sticker-name">Pattern #387</p>
+                        <p class="sticker-price">$20,000 - $100,000+</p>
+                        <div class="sticker-info">
+                            <p><strong>Karambit #387 "Blue Gem"</strong></p>
+                            <p>The legendary "Blue Gem" pattern for Karambit with near-complete blue coverage. One of the most valuable knife patterns in CS:GO history.</p>
+                            <p>Last sold for over $100,000 to a Chinese collector.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sticker-item" data-pattern="661">
+                        <img src="images/blueGemRarePattern.jpg" alt="Case Hardened Pattern #661" class="sticker-img">
+                        <p class="sticker-name">Pattern #661</p>
+                        <p class="sticker-price">$15,000 - $75,000+</p>
+                        <div class="sticker-info">
+                            <p><strong>AK-47 "Scar" Pattern</strong></p>
+                            <p>Though primarily an AK-47 pattern, this also creates premium blue coverage on knives, with clean blue distribution.</p>
+                            <p>Named for the distinctive dark "scar" that appears on AK-47 versions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sticker-item" data-pattern="555">
+                        <img src="images/blueGemRarePattern.jpg" alt="Case Hardened Pattern #555" class="sticker-img">
+                        <p class="sticker-name">Pattern #555</p>
+                        <p class="sticker-price">$10,000 - $60,000+</p>
+                        <div class="sticker-info">
+                            <p><strong>The "Honorable Mention"</strong></p>
+                            <p>Features extensive blue with minimal gold intrusions. Popular for both knives and AK-47s.</p>
+                            <p>Slightly less valuable than the #661 but still extraordinarily rare.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sticker-item" data-pattern="670">
+                        <img src="images/blueGemRarePattern.jpg" alt="Case Hardened Pattern #670" class="sticker-img">
+                        <p class="sticker-name">Pattern #670</p>
+                        <p class="sticker-price">$8,000 - $50,000+</p>
+                        <div class="sticker-info">
+                            <p><strong>The "Reverse Scar"</strong></p>
+                            <p>Features extensive blue coverage with the characteristic dark spot in a different position than the #661.</p>
+                            <p>Most valuable on AK-47s but creates premium knife patterns as well.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Investment Information -->
+            <div class="card">
+                <h3>Investment Outlook</h3>
+                <p>Knife skins generally retain value well over time, especially limited collections or those no longer dropping. When investing in knife skins, consider:</p>
+                
+                <div class="accordion">
+                    <div class="accordion-header">Rarity Factor</div>
+                    <div class="accordion-panel">
+                        <div class="accordion-content">
+                            <ul>
+                                <li><strong>Case Drop Rate:</strong> Typically 0.25-0.3%, making knives naturally scarce</li>
+                                <li><strong>Specific Pattern Rarity:</strong> Fade percentage, Doppler phase, Case Hardened blue percentage</li>
+                                <li><strong>Wear Rating:</strong> Factory New is rarest for Crimson Web, Ultraviolet, Night</li>
+                                <li><strong>Collection Availability:</strong> Discontinued cases create long-term supply constraints</li>
+                                <li><strong>StatTrak™ Variants:</strong> StatTrak knives are approximately 10x rarer than non-StatTrak</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-header">Aesthetic Appeal</div>
+                    <div class="accordion-panel">
+                        <div class="accordion-content">
+                            <ul>
+                                <li><strong>Vibrant Colors:</strong> Typically command higher prices (Fade, Doppler)</li>
+                                <li><strong>Clean Patterns:</strong> Distinguishable patterns preferred over muddy ones</li>
+                                <li><strong>Animation Quality:</strong> Butterfly and Karambit animations boost desirability</li>
+                                <li><strong>Visual Flaws:</strong> "Corner" quality on Karambit, "spine" quality on Butterfly</li>
+                                <li><strong>Pattern Consistency:</strong> Evenly distributed patterns more desirable than random</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-header">Market Trends</div>
+                    <div class="accordion-panel">
+                        <div class="accordion-content">
+                            <ul>
+                                <li><strong>Professional Player Usage:</strong> Can drive sudden demand increases</li>
+                                <li><strong>Discontinued Cases:</strong> Increase scarcity over time</li>
+                                <li><strong>New Knife Releases:</strong> May temporarily affect market</li>
+                                <li><strong>CS2 Visual Updates:</strong> Enhanced some finishes, boosting value</li>
+                                <li><strong>Chinese Collector Demand:</strong> Increasingly drives high-end market</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery with Lightbox - Uses jQuery -->
+            <h3>Knife Pattern Gallery</h3>
+            <div class="gallery">
+                <div class="gallery-item" data-caption="Butterfly Knife | Fade - 100% Fade pattern with full purple tip">
+                    <img src="images/knife-fade.jpg" alt="Butterfly Knife Fade 100%">
+                </div>
+                <div class="gallery-item" data-caption="Karambit | Doppler Sapphire - Rare blue gem variant">
+                    <img src="images/knife-doppler.jpg" alt="Karambit Doppler Sapphire">
+                </div>
+                <div class="gallery-item" data-caption="M9 Bayonet | Crimson Web (Factory New) - Extremely rare with centered web pattern">
+                    <img src="images/knife-crimson-web.jpg" alt="M9 Bayonet Crimson Web Factory New">
+                </div>
+                <div class="gallery-item" data-caption="Butterfly Knife | Case Hardened - Blue Gem pattern with over 90% blue">
+                    <img src="images/knife-case-hardened.jpg" alt="Butterfly Knife Case Hardened Blue Gem">
+                </div>
+                <div class="gallery-item" data-caption="Classic Knife | Fade - Full fade pattern with complete color spectrum">
+                    <img src="images/knife-fade.jpg" alt="Classic Knife Fade">
+                </div>
+                <div class="gallery-item" data-caption="Karambit | Lore (Factory New) - Clean corner with minimal scratches">
+                    <img src="images/knife.jpg" alt="Karambit Lore Factory New">
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 CS:GO Skins Market Analysis. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About Me</a> | 
+                <a href="contact.html">Contact</a> | 
+                <a href="credits.html">Credits</a> | 
+                <a href="sitemap.html">Site Map</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Lightbox viewer -->
+    <div id="lightbox">
+        <div class="lightbox-content">
+          <span class="close-lightbox">&times;</span>
+          <img id="lightbox-image" src="" alt="">
+          <div id="lightbox-caption"></div>
+        </div>
+        </div>
+    
+    <!-- JavaScript files loaded last for optimal page loading -->
+    <script src="main.js"></script>
+    <script src="jquery-effects.js"></script>
+</body>
+</html>
