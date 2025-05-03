@@ -1087,6 +1087,25 @@ textarea:focus {
     font-size: 1.5rem;
     margin-right: 0.5rem;
 }
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 0 1rem;
+    user-select: none;
+    transform: translateY(-50%);
+    z-index: 1001;
+  }
+  
+  #lightbox-prev {
+    left: 10px;
+  }
+  
+  #lightbox-next {
+    right: 10px;
+  }
 
 /* -----------------------------
    10. Media Queries
